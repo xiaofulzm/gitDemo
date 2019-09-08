@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        display: block;
+        margin: 100px auto 0;
+        width: 500px;
+        height: 500px;
+        background-color: #ccc;
+    }
+</style>
+
+<body>
+    <canvas width="500" height="500">您的浏览器不支持本网站的业务，请换一个谷歌浏览器查看 </canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCon = canvas.getContext("2d");
+        var offset = 0;
+        function draw() {
+            canCon.clearRect(0, 0, 500, 500);
+            canCon.setLineDash([4,2]);
+            canCon.lineDashOffset = -offset;
+            canCon.strokeRect(100,100,100,100);
+        }
+        function march() {
+            offset++;
+            if (offset > 12) {
+                offset = 0;
+            }
+            draw();
+            setTimeout(march,60);
+        }
+        march();
+    </script>
+</body>
+
+</html>

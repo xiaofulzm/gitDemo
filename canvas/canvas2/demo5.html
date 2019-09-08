@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        canvas{
+                display: block;
+                margin: 100px auto  0;
+               width: 500px;
+               height: 500px;
+               background-color: #ccc;
+        }
+    </style>
+<body>
+    <canvas width="500" height="500">您的浏览器不支持本网站的业务，请换一个谷歌浏览器查看 </canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCon = canvas.getContext("2d");
+        
+        canCon.shadowOffsetX = 2;
+        canCon.shadowOffsetY = 2;
+        canCon.shadowBlur = 20;
+        canCon.shadowColor = "rgba(0,0,0,0.5)";
+
+        //创建新的 image 对象 用作图案
+        var img  = new Image();
+        img.src = 'wait.jpg';
+        img.onload  = function (){
+            //创建图案
+            var ptrn = canCon.createPattern(img, 'repeat');
+            canCon.fillStyle = ptrn;
+            canCon.fillRect(0,0,100,100);
+        }
+
+
+        canCon.beginPath();
+        canCon.arc(250,250,15,0, Math.PI*2,true);
+        canCon.arc(250,250,30,0, Math.PI*2,true);
+        canCon.arc(250,250,45,0, Math.PI*2,true);
+        canCon.arc(250,250,60,0, Math.PI*2,true);
+        canCon.arc(250,250,75,0, Math.PI*2,true);
+        canCon.fill("evenodd");
+    </script>
+</body>
+</html>

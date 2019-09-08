@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        canvas{
+                display: block;
+                margin: 100px auto  0;
+               width: 500px;
+               height: 500px;
+               background-color: rgb(228, 234, 238);
+        }
+    </style>
+<body>
+    <canvas width="500" height="500">您的浏览器不支持本网站的业务，请换一个谷歌浏览器查看 </canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCon = canvas.getContext("2d");
+        //canCon.beginPath();
+        var path = new Path2D();
+        path.moveTo(100,50);
+        path.lineTo(50,200);
+        path.lineTo(175,100);
+        path.lineTo(25,100);
+        path.lineTo(150,200);
+        path.closePath();
+        canCon.strokeStyle = "red";
+        canCon.stroke(path);
+        
+
+        var path1 = new Path2D();
+        path.lineJoin = "round"
+        path1.moveTo(300,250);
+        path1.lineTo(250,400);
+        path1.lineTo(375,300);
+        path1.lineTo(225,300);
+        path1.lineTo(350,400);
+        path1.closePath();
+        canCon.fillStyle = "blue";
+        canCon.fill(path1);
+        //canCon.fill(path);
+
+    </script>
+</body>
+</html>

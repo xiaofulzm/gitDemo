@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            canvas{
+                display: block;
+                margin: 100px auto 0;
+                width: 500px;
+                height: 500px;
+                background-color: rgb(93, 93, 214); 
+            }
+        </style>
+</head>
+<body>
+    <canvas width="500" height="500">您的浏览器不支持本网站的业务， 请换一个谷歌浏览器查看 </canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCan = canvas.getContext("2d");   //可绘制2D上下文
+        canCan.fillStyle= "red";     //拿起一支笔， 并沾上有颜色的墨
+        canCan.arc(250,250,66,0,Math.PI*2);    //圆心的x,y,r,  绘制方法
+        canCan.fill();  //下笔作画
+    </script>
+</body>
+</html>

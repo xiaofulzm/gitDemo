@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo3</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            canvas{
+                display: block;
+                margin: 100px auto 0;
+                width: 500px;
+                height: 500px;
+                background-color: rgb(93, 93, 214); 
+            }
+        </style>
+</head>
+<body>
+    <canvas width="500" height="500">您的浏览器不支持本网站的业务， 请换一个谷歌浏览器查看 </canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCan = canvas.getContext("2d");   //可绘制2D上下文
+        canCan.fillStyle= "red";     //拿起一支笔， 并沾上有颜色的墨
+        canCan.strokeStyle="green";    //空心
+
+        canCan.beginPath();     //开始一个路径
+        canCan.moveTo(300,250);
+        canCan.arc(250, 250, 50, 0, Math.PI*3/2, false);
+        canCan.stroke();
+    </script>
+</body>
+</html>

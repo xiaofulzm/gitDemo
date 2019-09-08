@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        canvas{
+                display: block;
+                margin: 100px auto  0;
+               width: 500px;
+               height: 500px;
+               background-color: #ccc;
+        }
+    </style>
+<body>
+    <canvas width="500" height="500">您的浏览器不支持本网站的业务，请换一个谷歌浏览器查看 </canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCon = canvas.getContext("2d");
+        canCon.globalAlpha = 0.5;
+        canCon.fillRect(0,0, 50,50);
+        
+        canCon.lineWidth = "10";
+        canCon.lineJoin = "round"
+        canCon.moveTo(100,100);
+        canCon.lineTo(200,300);
+        canCon.lineTo(300,100);
+        canCon.lineTo(400,300);
+        canCon.stroke();
+    </script>
+</body>
+</html>

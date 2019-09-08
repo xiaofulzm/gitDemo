@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        display: block;
+        margin: 100px auto 0;
+        width: 500px;
+        height: 500px;
+        background-color: #ccc;
+    }
+</style>
+
+<body>
+    <canvas width="500" height="500">您的浏览器不支持本网站的业务，请换一个谷歌浏览器查看 </canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCon = canvas.getContext("2d");
+        
+        var lingrad = canCon.createLinearGradient(0,0,0,150);   //渐变的尺寸数据
+        lingrad.addColorStop(0,'#00ABEB'); //从上往下开始数   最开始的蓝色
+        lingrad.addColorStop(0.5,'#fff');  //中间是白的
+        lingrad.addColorStop(0.5,'#26C000'); //立即切换为绿色
+        lingrad.addColorStop(1,'#fff');    //最后也是白色
+        var lingrad2 = canCon.createLinearGradient(0,50,0,95);
+        lingrad2.addColorStop(0.5,'#000');
+        lingrad2.addColorStop(1, 'rgba(0,0,0,0)'); 
+
+        canCon.fillStyle = lingrad;
+        canCon.strokeStyle = lingrad2;
+
+        canCon.fillRect(10,10,130,130);
+        canCon.strokeRect(50,50,50,50);
+    </script>
+</body>
+
+</html>

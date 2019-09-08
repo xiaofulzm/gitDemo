@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        canvas{
+                display: block;
+                margin: 100px auto  0;
+               width: 500px;
+               height: 500px;
+               background-color: rgb(228, 234, 238);
+        }
+    </style>
+<body>
+    <canvas width="500" height="500">您的浏览器不支持本网站的业务，请换一个谷歌浏览器查看 </canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let canCon = canvas.getContext("2d");
+        canCon.beginPath();
+        canCon.moveTo(100,50);
+        canCon.lineTo(50,200);
+        canCon.lineTo(175,100);
+        canCon.lineTo(25,100);
+        canCon.lineTo(150,200);
+        canCon.closePath();
+        canCon.fillStyle = "green";
+        canCon.fill('evenodd');
+        
+
+    </script>
+</body>
+</html>
