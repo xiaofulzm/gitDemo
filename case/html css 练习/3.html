@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+		  <meta charset="UTF-8">
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫">
+		  <meta name="Keywords" content="三角形等">
+		  <meta name="Description" content="一些作业">
+		  <title>盒子模型</title>
+			<style>
+				body{
+					margin:0;
+					padding:0;
+				
+				}
+				/* 三角形 */
+				.graphics {
+					box-sizing:border-box;
+					/* display:inline; */
+					width:0px;
+					height:0px;
+					margin:100px 0px 0px 400px;
+					border-style:solid;
+					border-width:100px 80px 60px 50px;
+					border-color:blue white white white;
+					/* background:blue; */
+					
+				}
+				/* 等边三角形 */
+				.graphics-tow{
+					display:inline;
+					width:0;
+					height:0;
+					margin:0px 0px 0px 800px;
+					border-style:solid;
+					border-width:100px 60px 100px 60px;
+					border-color:red white white white;
+					/* background:red; */
+				}
+				/* 直角三角形 */
+				.graphics-three{
+					display:inline;
+					width:0;
+					height:0;
+					margin:0px 0px 0px 200px;
+					border-style:solid;
+					border-width:100px 0px 100px 100px;
+					border-color:black white white white;
+				}
+			</style>
+	 </head>
+	 <body>
+			<div class="graphics"></div>
+			<div class="graphics-tow"></div>
+			<div class="graphics-three"></div>
+
+	 </body>
+</html>

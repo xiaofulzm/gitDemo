@@ -1,0 +1,192 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				.box{
+					position: relative;
+					margin: 50px auto;
+					width: 820px;
+					height: 380px;
+					overflow: hidden;
+					cursor: pointer;
+				}
+				.box .img {
+					margin-left: 0;
+					width: 1000%;
+					height: 340px;
+					transition: 0.2s;
+				}
+				.box .img ul li{
+					float: left;
+					width: 820px;
+					height: 340px;
+				}
+				.box .img ul li img{
+					display: block;
+				}
+				/* 标题区域 */
+				.box .title{
+					width: 100%;
+					height: 40px;
+					background-color: #ccc;
+					
+				}
+				.box .title p{
+					width: 160px;
+					height: 38px;
+					display: inline-block;
+					text-align: center;
+					line-height: 40px;
+				}
+				.box .title p.active{
+					background-color: #fff;
+					border-bottom: 2px solid blue;
+					color: blue;
+				}
+				/* 按钮区域 */
+				.box .botton{
+				}
+				.box .botton #left{
+					position: absolute;
+					top: 100px;
+					left: 10px;
+					width: 60px;
+					height: 50px;
+					background-color: rgba( 128,255 ,255,0.2);
+					text-align: center;
+					line-height: 50px;
+					font-size: 40px;
+				}
+				.box .botton #left:hover{
+					background-color: rgba( 128,255 ,255,0.9);
+				}
+				.box .botton #right{
+					position: absolute;
+					top: 100px;
+					right: 10px;
+					width: 60px;
+					height: 50px;
+					background-color: rgba( 128,255 ,255,0.2);
+					text-align: center;
+					line-height: 50px;
+					font-size: 40px;
+				}
+				.box .botton #right:hover{
+					background-color: rgba( 128,255 ,255,0.9);
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+	  <div class = "box">
+		<!-- 图片区域 -->
+		<div class="img">
+			<ul>
+				<li><img src= "./images/1.jpg"></li>
+				<li><img src= "./images/2.jpg"></li>
+				<li><img src= "./images/3.jpg"></li>
+				<li><img src= "./images/4.jpg"></li>
+				<li><img src= "./images/5.jpg"></li>
+			</ul>
+		</div>
+		<!-- 标题区域 -->
+		<div class="title">
+			<p class="active">季中英雄之礼</p>
+			<p>试炼2019门票</p>
+			<p>季中英雄之礼</p>
+			<p>我们的冠军皮肤</p>
+			<p>季中英雄之礼</p>
+		</div>
+			<!-- 按钮区域 -->
+		<div class= "botton">
+			<div id="left"> < </div>
+			<div id="right"> > </div>
+		</div>
+	  </div>
+	  <script>
+		  //获取p标签的序号
+		/*for( let i = 0;i< len ;i++ ){
+			aP[i].lzm = i;
+			aP[i].onmouseenter = function (){
+				for (var j =0;j<len ;j++ ){  //删除所有active标签
+					aP[j].classList.remove("active");
+				}
+				this.classList.add("active"); //添加标签
+				var num = this.lzm
+				aImg.style.marginLeft = -num*820+ "px";
+			} 
+		}*/
+		//获取元素
+		var aImg = document.getElementsByClassName("img")[0],
+			aP = document.querySelectorAll(".title p");
+		var	len = aP.length;
+		//按钮
+		var oLeft = document.getElementById("left"),
+			oRight= document.getElementById("right");
+		var index = 0; //定义一个变量
+		//左按钮
+		oLeft.onclick = function (){
+			index--;
+			if ( index<0){
+				index = 4;
+			}
+			lzm(index)
+		}
+		//右按钮
+		oRight.onclick = function (){
+			index++;
+			if (index>4){
+				index = 0; 
+			}
+			lzm(index); //实参index
+			
+		}
+		for( let i = 0;i< len ;i++ ){
+			aP[i].onmouseenter = function (){
+				lzm(i);
+				index= i;//点击切换图片是 下面序号与之对齐
+			}
+		}
+		//定义函数   //形参 a  //函数名lzm
+		var lzm = function (a){
+			for (var j =0;j<len ;j++ ){  //删除所有active标签
+					aP[j].classList.remove("active");
+			}
+			aImg.style.marginLeft = -a*820+ "px";
+			aP[a].classList.add("active");
+			
+		}
+	  </script>
+	 </body>
+</html> <!-- 结束标签-->

@@ -1,0 +1,97 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>hover效果图</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				.list{
+					margin: 100px auto;
+					width: 1000px;
+					/* border: 1px solid blue; */
+				}
+				.list li{
+					position: relative;
+					float: left;
+					margin: 0 25px 0 25px;
+					width: 200px;
+					height: 200px;
+					background-color: #000;
+				}
+				.list li:nth-child(1){
+					background: url("./images2/1.png") center/cover;
+				}
+				.list li:nth-child(2){
+					background: url("./images2/2.png") center/cover;
+				}
+				.list li:nth-child(3){
+					background: url("./images2/3.png") center/cover;
+				}				
+				.list li:nth-child(4){
+					background: url("./images2/4.png") center/cover;
+				}
+				.list li:before,.list li:after{
+					position: absolute;
+					content: "";
+					width: 0px;
+					height: 0px;
+					transition: .3s;
+					opacity: 0;
+				}
+				.list li:before{
+					left: 25px;
+					bottom: 25px;
+					border-left: 10px solid pink;
+					border-bottom: 10px solid blue;
+				}
+				.list li:after{
+					top: 25px;
+					right: 25px;
+					border-top: 10px solid pink;
+					border-right: 10px solid blue;
+				}
+				.list li:hover:before,.list li:hover:after{
+					width: 165px;
+					height: 165px;
+					opacity: 1;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<ul class="list clearfix">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	 </body>
+</html> <!-- 结束标签-->

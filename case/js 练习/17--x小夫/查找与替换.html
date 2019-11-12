@@ -1,0 +1,129 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#wrap{
+					width: 640px;
+					height: 315px;
+					margin: 50px auto;
+					border: 1px solid #bbb;
+					border-radius: 5px;
+				}
+				#wrap .top{
+					width: 600px;
+					height: 40px;
+					padding-top: 30px;
+					margin: 0 auto;
+				}
+				#wrap .top input{
+					margin:0 5px;
+				}
+				#wrap .top input[type=text]{
+					width: 180px;
+					height: 36px;
+					border:1px solid #bbb;
+					text-indent: 5px;
+				}
+				#wrap .top input[type=button]{
+					width: 50px;
+					height: 40px;
+				}
+				#wrap .top input[type=button]:hover{
+					background-color: blue;
+				}
+				#wrap .bottom{
+					margin-top: 20px;
+				}
+				#wrap .bottom p{
+					margin: 5px 0;
+					font-size: 15px;
+					text-indent: 2em;
+					line-height: 25px;
+				}
+				#wrap .bottom p b{
+					color: red;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<!-- 按钮区域 -->
+		<div id="wrap">
+            <div class="top">
+                <input type="text" placeholder="搜索内容">
+                <input type="button" value="搜索">
+                <input type="text" placeholder="替换内容">
+                <input type="button" value="替换">
+                <input type="button" value="重置">
+            </div>
+			<!-- 	正文内容 -->
+            <div class="bottom">
+                <p>张家界是湖南省辖地级市，原名大庸市，辖2个市辖区（永定区、武陵源区）、2个县（慈利县、桑植县）。位于湖南西北部，澧水中上游，属武陵山区腹地。[1] 张家界因旅游建市，是中国最重要的旅游城市之一，是湘鄂渝黔革命根据地的发源地和中心区域。</p>
+                <p>1982年9月，张家界国家森林公园成为中国第一个国家森林公园。</p>
+                <p>1988年8月，张家界武陵源风景名胜区被列入国家重点风景名胜区；1992年，由张家界国家森林公园等三大景区构成的武陵源风景名胜区被联合国教科文组织列入《世界自然遗产名录》；2004年2月，被列入全球首批《世界地质公园》；2007年，被列入中国首批国家5A级旅游景区。[2]</p>
+            </div>
+		</div>
+		<script>
+			(function (){
+				//获取元素
+				var aInput = document.querySelectorAll("#wrap .top input"),
+					oBottom = document.querySelector("#wrap .bottom"),
+					yHTML = oBottom.innerHTML;
+				//搜索被点击
+					aInput[1].onclick = function (){
+						var sContent = aInput[0].value;  //获取搜索的内容
+						if(!sContent)return ; //如果没有内容就弹出
+						var arr= yHTML.split(sContent); //以获取的内容开始剪切
+						var newHTML = arr.join("<b>"+sContent+"</b>");//根据规则返新的样式
+						oBottom.innerHTML = newHTML;
+					};
+				//替换被点击
+					aInput[3].onclick = function (){
+						var sContent1 = aInput[0].value,
+							sContent2 = aInput[2].value; //获取内容
+						if (!sContent1 || !sContent2)return; 
+						var arr = yHTML.split(sContent1); //切割搜索的内容
+						var newHTML = arr.join("<b>"+sContent2 +"</b>"); //替换的内容
+						oBottom.innerHTML = newHTML;
+						yHTML = arr.join(sContent2); //当鼠标再次点击替换 改变替换的内容的样式，当再点击搜索或者替换，使找不到内容  代码跳出  执行然后执行这个代码
+					}
+				//重置被点击
+					aInput[4].onclick =function (){
+						aInput[0].value = aInput[2].value = "";					
+						oBottom.innerHTML = yHTML ;
+					}
+			})();
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

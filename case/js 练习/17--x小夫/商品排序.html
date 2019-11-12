@@ -1,0 +1,167 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#wrap{
+					width: 879px;
+					height: 550px;
+					margin: 50px auto 0;
+					padding: 40px;
+					border: 1px solid #bbb;
+					user-select: none;
+				}
+				#content{
+					overflow: hidden;
+					width: 100%;
+					height: 500px;
+				}
+				#content ul{
+					width: 900px;
+					height: 100%;
+				}
+				#content ul li{
+					position: relative;
+					float: left;
+					width: 210px;
+					height: 240px;
+					margin-right: 13px;
+					margin-bottom: 20px;
+				}
+				#content ul li img{
+					display: block;
+				}
+				#content ul li p{
+					width: 100%;
+					height: 30px;
+					line-height: 30px;
+					font-size: 14px;
+				}
+				#content ul li span{
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 50px;
+					height: 50px;
+					background: url("images/price.png");
+					font-size:14px;
+					line-height: 50px;
+					font-style: italic;
+					color: #fff;
+				}
+				#btn{
+					margin-top: 20px;
+				}
+				#btn span{
+					display: inline-block;
+					height:30px;
+					padding: 6px 20px;
+					line-height: 30px;
+					text-align: center;
+					font-size: 12px;
+					background-color: #f60;
+					color: #fff;
+					cursor: pointer;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id="wrap">
+			<div id="content">
+				<ul>
+					<!-- <li></li> -->
+				</ul>
+			</div>
+				<!-- 选项按钮 -->
+			<div id="btn">
+				<span style="margin-left: 600px">随机排序</span>
+				<span>从低到高</span>
+				<span>从高到低</span>
+			</div>
+		</div>
+		<script>
+			(function (){
+				//获取元素
+				var oUi = document.querySelector("#content ul"),
+					aSpan = document.querySelectorAll("#btn span ");
+				//要遍历的数组
+				var lzm = [
+							{src :"images/xh_img1.jpg" ,dec:"深红色经典玫瑰",price:97 },
+							{src :"images/xh_img2.jpg" ,dec:"深红色经典玫瑰",price:99.5 },
+							{src :"images/xh_img3.jpg" ,dec:"深红色经典玫瑰",price:100 },
+							{src :"images/xh_img4.jpg" ,dec:"深红色经典玫瑰",price:130 },
+							{src :"images/xh_img5.jpg" ,dec:"深红色经典玫瑰",price:215 },
+							{src :"images/xh_img6.jpg" ,dec:"深红色经典玫瑰",price:300 },
+							{src :"images/xh_img7.jpg" ,dec:"深红色经典玫瑰",price:500 },
+							{src :"images/xh_img8.jpg" ,dec:"深红色经典玫瑰",price:700 }
+					];
+				//定义初始函数
+				var fn = function (lzm){
+					// 遍历数组
+					var content = "";
+					lzm.forEach(function (item){
+						content += `<li>
+										<img src="${item.src}" width='210' height='210' alt=''>
+										<p>${item.dec}</p>
+										<span>￥<b>${item.price}</b></span>
+									</li>`;		 
+						});
+						oUi.innerHTML = content;
+				};
+				fn(lzm);
+				//随机排序
+				aSpan[0].onclick = function (){
+					var randomLzm = lzm.sort(function (){
+						return Math.random()-0.2;
+					});
+					fn(randomLzm);
+				}
+				//降序排序
+				aSpan[1].onclick = function (){
+					var declineLxm = lzm.sort(function (a,b){
+						return a.price -b.price;
+					})
+					fn(declineLxm);
+				}
+				//升序排序
+				aSpan[2].onclick = function(){
+					var riseLzm = lzm.sort(function (a,b){
+						return b.price-a.price;
+					})
+					fn(riseLzm);
+				}
+			})();
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

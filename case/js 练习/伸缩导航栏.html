@@ -1,0 +1,117 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#box{
+					user-select: none;
+					width: 200px;
+					border: 1px dashed pink;
+					margin: 100px auto;
+				}
+				#box div p{
+					width: 100%;
+					height: 40px;
+					background: #000;
+					color: #fff;
+					line-height: 40px;
+					text-indent: 10px;
+					font-size: 14px;
+					font-weight: bold;
+					cursor: pointer;
+					border-bottom: 1px solid pink;
+				}
+				#box div.active p{
+					background: #f60;
+				}
+				#box div ul{
+					overflow: hidden;
+					height: 0;
+				}
+				#box div.active ul{
+					height: auto;
+				}
+				#box div ul li{
+					width: 100%;
+					height: 25px;
+					line-height: 25px;
+					text-indent: 20px;
+					font-size: 12px;
+					color: #000;
+					background: #eee;
+					margin-bottom: 1px;
+					cursor: pointer;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id="box">
+			<div>
+				<p>同事</p>
+				<ul>
+					<li>乌拉</li>
+					<li>乌拉拉</li>
+					<li>乌拉拉拉</li>
+				</ul>
+			</div>
+			<div>
+				<p>好友</p>
+				<ul>
+					<li>心艾</li>
+					<li>心艾艾</li>
+					<li>心艾艾艾</li>
+					<li>心艾艾艾艾</li>
+				</ul>
+			</div>
+			<div>
+				<p>同学</p>
+				<ul>
+					<li>木马</li>
+					<li>木马马</li>
+					<li>木马马马</li>
+				</ul>
+			</div>
+		 </div>
+		 <script>
+			var aP = document.querySelectorAll ("#box p"),
+				aDiv = document.querySelectorAll ("#box div");
+				for ( var i = 0 ,len = aP.length ;i < len ; i++ ){
+					aP[i].index = i;
+					aP[i].onclick = function (){
+						aDiv[this.index].classList.toggle( "active");
+					}
+				}
+		 </script>
+	 </body>
+</html> <!-- 结束标签-->

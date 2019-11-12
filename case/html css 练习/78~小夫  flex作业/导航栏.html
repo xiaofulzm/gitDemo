@@ -1,0 +1,133 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				html{
+					height: 100%;
+				}
+				body{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 100%;
+					background-image: linear-gradient( pink 50%, green 50%);
+				}
+				.box{
+					position: relative;
+					display: flex;
+					/* width: 500px; */
+					height: 100px;
+					/* background-color: #ccc; */
+					overflow: hidden;
+				}
+				.box .list{
+					display: flex;
+					width: 400px;
+					height: 100px;
+					background-color: #fff;
+					transition: .6s;
+				}
+				.box .list li{
+					flex: none;
+					width: 100px;
+					line-height: 100px;
+					text-align: center;
+					font-size: 20px;
+				}
+				.box input{
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 100px;
+					height: 100px;
+					opacity: 0;
+					z-index: 1;
+				}
+				.box .bth{
+					position: relative;
+					width: 100px;
+					height: 100px;
+					background-color: #fff;
+				}
+				.box .bth:before,.bth:after{
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					width: 50px;
+					height: 5px;
+					/* background-color: black; */
+					transition: .6s;
+				}
+				.box .bth:before{
+					transform: rotate(45deg);
+					background-color: green;
+				}
+				.box .bth:after{
+					transform: rotate(-45deg);
+					background-color: pink;
+				}
+				.box :checked+.list{
+					width: 0px;
+				}
+				.box :checked~.bth{
+					background-image: linear-gradient( pink 50%, green 50%);
+				}
+				.box :checked~.bth:after{
+					transform: translateY(15px) rotate(180deg);
+					background-color: pink;
+				}
+				.box :checked~.bth:before{
+					transform: translateY(-15px) rotate(-180deg);
+					background-color: green;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div class="box">
+			<input type="checkbox">
+			<ul class="list">
+				<li>nice</li>
+				<li>to</li>
+				<li>me</li>
+				<li>you</li>
+			</ul>
+			<div class="bth"></div>
+		</div>
+	 </body>
+</html> <!-- 结束标签-->

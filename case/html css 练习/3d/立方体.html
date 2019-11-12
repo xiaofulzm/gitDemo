@@ -1,0 +1,132 @@
+<!doctype html> <!-- 声明身份 文档类型 -->
+<html>
+	<head><!--包含数据信息-->
+		<meta charset="utf-8"><!--信息标签 声明字符编码集 utf-8万国码-->
+		<meta name="Author" content="银时老师">
+		<meta name="keywords" content="电商,前端">
+		<meta name="Description" content="网站的描述,广告位">
+		<title>银时老师</title>
+		<style>
+			p,h1,h2,h3,h4,h5,h6,ul,li,body{
+				margin: 0;
+				font-size: 16px;
+				line-height: normal;
+			}
+			input{
+				padding: 0;
+				outline: none;/* border:*/
+			}
+			
+			ul,ol{
+				padding: 0;
+				list-style-type: none;
+			}
+			a{
+				color: #000;
+				text-decoration: none;
+			}
+			.clearfix:after{
+				display: block;
+				content: ".";
+				height: 0;
+				font-size: 0;
+				clear: both;
+				overflow: hidden;
+			}
+			body{
+				perspective: 1000px;
+				background-color: pink;
+			}
+			.main{
+				position: relative;
+				margin: 200px auto;
+				width: 200px;
+				height: 200px;
+				transform-style: preserve-3d;
+				animation: roll 6s linear infinite;
+			}
+			@keyframes roll{
+				from{
+					transform: rotateX(0) rotateY(0);
+				}
+				to{
+					transform: rotateX(360deg) rotateY(360deg);
+				}
+			}
+			.box{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				/* background-color: #ccc; */
+				border: 1px #000 solid;
+				transition: 3s;
+				
+			}
+			.box:nth-child(1){
+				transform: rotateY(90deg) translateZ(0px);
+				background: url("./1.jpg") no-repeat center/cover;
+			}
+			.main:hover .box:nth-child(1){
+				transform: rotateY(90deg) translateZ(-100px);
+			}
+			.box:nth-child(2){
+				transform: rotateY(180deg) translateZ(0);
+				background: url("./2.jpg") no-repeat center/cover;
+			}
+			.main:hover .box:nth-child(2){
+				transform: rotateY(180deg) translateZ(-100px);
+			}
+			.box:nth-child(3){
+				transform: rotateY(270deg) translateZ(0);
+				background: url("./3.jpg") no-repeat center/cover;
+			}
+			.main:hover .box:nth-child(3){
+				transform: rotateY(270deg) translateZ(-100px);
+			}
+			.box:nth-child(4){
+				transform: rotateY(0deg) translateZ(0);
+				background: url("./4.jpg") no-repeat center/cover;
+			}
+			.main:hover .box:nth-child(4){
+				transform: rotateY(0) translateZ(-100px);
+			}
+			.box:nth-child(5){
+				transform: rotateX(90deg) translateZ(0);
+				background: url("./5.png") no-repeat center/cover;
+			}
+			.main:hover .box:nth-child(5){
+				transform: rotateX(90deg) translateZ(-100px);
+			}
+			.box:nth-child(6){
+				transform: rotateX(270deg) translateZ(0);
+				background: url("./6.jpg") no-repeat center/cover;
+			}
+			.main:hover .box:nth-child(6){
+				transform: rotateX(270deg) translateZ(-100px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+
+		<!--
+			绕自己的Z轴
+
+			translateZ
+
+			大盒子要允许小何在他体内出现3d空间
+
+			transform-style: preserve-3d;
+			加给大盒子: 让大盒子内所有具有3d旋转的盒子有3d空间效果
+
+
+		-->
+	</body>
+</html>

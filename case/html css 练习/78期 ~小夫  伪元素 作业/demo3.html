@@ -1,0 +1,111 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				body{
+					background-color: #222;
+				}
+				.nav{
+					position: relative;
+					margin: 100px auto;
+					width: 450px;
+					height: 50px;
+					background-color: #fff;
+				}
+				.nav:before,.nav:after{
+					content: "";
+					position: absolute;
+					top: 0;
+					border-style: solid;
+					border-width: 25px;
+				}
+				.nav:before{
+					left: 0;
+					border-color: transparent transparent transparent #222;
+				}
+				.nav:after{
+					right: 0;
+					border-color: transparent #222 transparent transparent;
+				}
+				.nav .list{
+					position: relative;
+					top: -10px;
+					margin: 0 auto;
+					width: 350px;
+					height: 60px;
+					overflow: hidden ;
+				}
+				.nav .list li{
+					position: relative;
+					top: 10px;
+					float: left;
+					width: 70px;
+					/* height: 50px; */
+					line-height: 50px;
+					text-align: center;
+					background: #fff;
+					transition:.3s;
+					border-radius: 3px;
+				}
+				.nav .list li:hover{
+					top: 0px;
+				}
+				.nav .list li:before{
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: -10px;
+					width: 70px;
+					height: 10px;
+					background: 
+						linear-gradient(-45deg,#fff 50%,#ccc 50%) no-repeat right 0/10px 10px,
+						linear-gradient(45deg,#fff 50%,#ccc 50%) no-repeat left 0/10px 10px,
+						linear-gradient(#222,#222)
+					;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div class="nav">
+			<ul class="list clearfix">
+				<li>Hello</li>
+				<li>Nice</li>
+				<li>To</li>
+				<li>Meet</li>
+				<li>You</li>
+			</ul>
+		</div>
+	 </body>
+</html> <!-- 结束标签-->

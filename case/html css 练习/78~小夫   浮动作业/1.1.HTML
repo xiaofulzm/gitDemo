@@ -1,0 +1,103 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol{
+					margin: 0;
+					padding: 0;
+				}
+				a{
+					color: #fff;
+					text-decoration: none;
+				}
+				ul{
+					list-style-type: none;
+				}
+				.nav{
+					margin: 50px auto;
+					width: 1001px;
+					height: 83px;
+					background-color: #ccc;
+				}
+				.nav .list li{
+					float: left;
+					width: 91px;
+					height: 45px;
+					background: url("./demo1/bg01.png") 0 04px;
+					line-height: 45px;
+					text-align: center;
+					cursor: pointer;
+				}
+				.nav .list .current{
+					background: url("./demo1/bg02.png")-2px 0;
+					color: #ffff33;
+				}
+				.nav .list .current>a{
+					color: #ffff33;
+				}
+				.nav .list:hover>li{
+					background: url("./demo1/bg01.png") 0 4px;
+				}
+				.nav .list:hover>li>a{
+					color: #fff;
+				}
+				.nav .list>li:hover{
+					background: url("./demo1/bg02.png")-2px 0;
+					color: #fff;
+				}
+				.nav .list>li>a:hover{
+					color: #ffff33;
+				}
+				.nav .list>li>p{
+					display: none;
+				}
+				.nav .list .current p{
+					display: block;
+				}
+				.nav .list:hover>li>p{
+					display: none;
+				}	
+				.nav .list>li:hover>p{
+					display: block;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div class="nav">
+			<ul class="list">
+				<li>
+					<a href="#">科技首页</a>
+					<p>南京时间：</p>
+				</li>
+				<li class="current">
+					<a href="#">科技首页</a>
+					<p>北京时间：</p>
+				</li>
+				<li>
+					<a href="#">科技首页</a>
+					<p>上海时间：</p>
+				</li>
+				<li>
+					<a href="#">科技首页</a>
+					<p>合肥时间：</p>
+				</li>
+				<li>
+					<a href="#">科技首页</a>
+					<p>深圳时间：</p>
+				</li>
+				<li><a href="#">科技首页</a></li>
+				<li><a href="#">科技首页</a></li>
+				<li><a href="#">科技首页</a></li>
+				<li><a href="#">科技首页</a></li>
+				<li><a href="#">科技首页</a></li>
+				<li><a href="#">科技首页</a></li>
+			</ul>
+		</div>
+	 </body>
+</html> <!-- 结束标签-->

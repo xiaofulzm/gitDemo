@@ -1,0 +1,136 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+		  			<style>
+		  				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol{
+		  					margin: 0;
+		  					padding: 0;
+		  					height: 3000px;
+		  				}
+		  				a{
+		  					text-decoration: none;
+		  				}
+		  				ul{
+		  					list-style: none;
+		  				}
+						p{
+							color: #fff;
+		  					font-size: 14px;
+						}
+		  				/* 背景图片 */
+		  				.sidebar{
+		  					position: absolute;
+		  					top: 80px;
+		  					left: 100px;
+		  					width: 165px;
+		  					height: 430px;
+		  					/* border: 1px solid black; */
+		  					background: url("demo2/fdTop.png") no-repeat fixed 101px 82px/165px 169px,url("demo2/fdBottom.png") no-repeat fixed 119px 251px/110px 260px;
+		  					position: fixed;
+		  				}/* 二维码 */
+		  				.sidebar .code{
+		  					position: absolute;
+		  					top: 30px;
+		  					left: 32px;			
+		  				}
+		  				.sidebar .wenxin{
+		  					position: absolute;
+		  					top: 112px;
+		  					left: 26px;
+		  					color: #fff;
+		  					font-size: 15px;
+		  				}
+		  				/* 关闭按钮 */
+		  				.sidebar .close{
+		  					position: absolute;
+		  					top: 0px;
+		  					left: 100px;
+		  				}
+		  				/* 中间列表部分 */
+		  				.sidebar .list{
+		  					position: absolute;
+		  					top: 190px;
+		  					left: 17px;
+		  				}
+		  				.sidebar .list>li{
+		  					box-sizing: border-box;
+		  					width: 110px;
+		  					height: 40px;
+							font-size: 13px;
+		  					 background: url("demo2/line.png") no-repeat;
+							 background-position: 8px 35px;
+		  				} 
+						.sidebar .list>li>img{
+							position: relative;
+							top: 4px;
+							left:10px;
+						}
+						.sidebar .list>li>a{
+							position: relative;
+							left:11px;
+							bottom: 2px;
+							color: #fff;
+							font-size: 15px;
+							cursor: pointer;
+						}
+						/* 底下部分 */
+						.sidebar .counseling{
+							position: absolute;
+		  					top: 350px;
+		  					left: 35px;
+							font-size: 13px;
+						}
+						.sidebar .number{
+							position: absolute;
+		  					top: 368px;
+		  					left: 33px;
+							font-size: 13px;
+						}
+						.sidebar .top{
+							position: absolute;
+		  					top: 397px;
+		  					left: 60px;
+						}
+						.sidebar .totop{
+							position: absolute;
+		  					top: 383px;
+		  					left: 60px;
+						}
+		  			</style>
+		  	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div  class="sidebar">
+			<img class="code" src="demo2/ewm.png" width="80" height="80" alt="二维码">
+			<p class="wenxin">微信优惠购票</p>
+			<img class="close" src="demo2/close.png" width="21" height="21" alt="关闭图片">
+			<ul class="list">
+				<li>
+					<img src=" demo2/qq.png" width="23" height="23" alt="qq图标">
+					<a>景区咨询</a>
+				</li>
+				<li>
+					<img src=" demo2/qq.png" width="23" height="23" alt="qq图标">
+					<a>连锁咨询</a>
+				</li>
+				<li>
+					<img src=" demo2/qq.png" width="23" height="23" alt="qq图标">
+					<a>客服咨询</a>
+				</li>
+				<li>
+					<img src=" demo2/qq.png" width="23" height="23" alt="qq图标">
+					<a>客服咨询</a>
+				</li>
+			</ul>
+			<p class="counseling">景区连锁咨询</p>
+			<p class="number">13787021314</p>
+			<p class="top">Top</p>
+			<a href="#"><img class="totop" src="demo2/fdToTop.png" width="25" height="14" alt=" 向上图标"></a>
+		</div>
+	 </body>
+</html> <!-- 结束标签-->

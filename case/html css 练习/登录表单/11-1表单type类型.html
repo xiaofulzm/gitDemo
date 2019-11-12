@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单type类型</title>
+		<style type="text/css">
+			
+			.box{
+				border: 5px solid red;
+				width: 600px;
+				margin: 100px auto;
+			}
+			.box form{
+				border: 1px solid green;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+		 表单type类型
+		 <input type="" />
+		 text
+		 password
+		 radio  单选
+		 checkbox  复选框
+		 file
+		 
+		 button
+		 reset/submit
+		 image
+		 
+		 email
+		 tel
+		 number
+		 url
+		 search
+		 color
+		 -->
+		
+		
+		<div class="box">
+			<h3>表单的type类型，label标注标签</h3>
+			
+			<form>
+				<span>用户名：</span>
+				<input type="text" /> 
+				<br />
+				<label>密码：</label>
+				<input type="password" />
+				<br />
+				<label>性别：</label>
+				<input type="radio" name="sex" />男
+				<input type="radio" name="sex"/>女
+				<br />
+				<label>兴趣爱好：</label>
+				<input type="checkbox"  />篮球
+				<input type="checkbox" />足球
+				<input type="checkbox"  />排球
+				<input type="checkbox" />羽毛球
+					
+				<br />
+				<label>上传文件：</label>
+				<input type="file"  />
+				
+				<br />
+				<input type="button" value="用户提交button" />
+				<input type="submit" value="用户提交submit" />
+				<input type="reset"  value="重置reset" />
+				<input type="image" value="11" src="icon_more.png" />
+				<button type="button">用户提交按钮button标签</button>
+			</form>
+			
+		</div>
+	</body>
+</html>

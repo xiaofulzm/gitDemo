@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0px;
+				padding: 0px;
+			}
+			body{
+				padding: 50px;
+			}
+			
+			.box{
+				border: 1px solid grey;
+				/* height: 300px; */
+				width: 300px; 
+				
+			}
+			.box .title{
+				text-align: center;
+				border-bottom: 1px solid grey;
+			}
+			.box .title a{
+				color: #999999;
+				
+				text-decoration: none;
+				padding: 10px 10px;
+				display: inline-block;
+			}
+			.box .title a:hover{
+				color: #333;
+			}
+			.box .title a:focus{
+				/* 获取光标 焦点 */
+				color: #333;
+			}
+			
+			
+			.box form{
+				padding: 20px;
+			}
+			.box form input{
+				border: 1px solid grey;
+				margin:10px 0px;
+				padding: 0px 5px;
+			}
+			.box form .input_1{
+				height: 40px;
+				display: block;
+				 width:250px; 
+			}
+			.box form .input_2{
+				transform: scale(1.5);
+				margin: 15px 0px;
+				margin-left: 10px;
+			}
+			.box form .input_2:hover{
+				
+			}
+			.box form label{
+				padding: 0px 10px;
+			}
+			.box form .button_01{
+				padding: 10px;
+				width: 100%;
+				cursor: pointer;
+				background: dodgerblue;
+				color: white;
+				font-size: 18px;
+			}
+			.box form .button_01 i{
+				padding: 0px 5px;
+			}
+			
+			
+			
+			
+			
+			.box .down{
+				padding: 50px 20px 20px 0px;
+				text-align: right;
+				
+			}
+			.box .down a{
+				font-size: 12px;
+				color: royalblue;
+				text-decoration: none;
+			}
+			.box .down a:hover{
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="title">
+				<a href="#">快速登录</a>
+				<a href="#">账号密码登录</a>
+			</div>
+			<form>
+				<input class="input_1" type="text" />
+				<input class="input_1" type="password" />
+				<input anr class="input_2" type="checkbox" /><label>下次自动登录</label><br />
+				<button class="button_01" type="button">登<i></i>录</button>
+			</form>
+			
+			<div class="down">
+				<a href="#">忘了密码？</a>
+				<a href="#">注册新账号</a>
+				<a href="#">意见反馈</a>
+			</div>
+			
+		</div>
+	</body>
+</html>

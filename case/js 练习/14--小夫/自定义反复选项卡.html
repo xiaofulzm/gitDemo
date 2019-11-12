@@ -1,0 +1,150 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#wrap{
+					width: 300px;
+					padding-top: 20px;
+					margin: 50px auto;
+					border: 1px solid #bbb;
+					border-radius: 15px;
+					user-select: none;
+				}
+				#wrap ul.list li{
+					width: 100%;
+					height: 50px;
+					line-height: 50px;
+					font-size: 14px;
+					background: url("images/ckbg1.jpg") no-repeat 20px center;
+					text-indent: 70px;
+					cursor: pointer;
+					color: #fff;
+				}
+				#wrap ul.list li.click{
+					background-image: url("images/ckbg2.jpg");
+					text-indent: 50px;
+				}
+				#wrap .btn{
+					overflow: hidden;
+					width: 100%;
+					height: 50px;
+				}
+				#wrap .btn p{
+					float: left;
+					line-height: 50px;
+					margin-left: 50px ;
+					background: url("images/ckbg1.jpg") no-repeat 0 center;
+					text-indent: 23px;
+					font-size:14px;
+					cursor: pointer;
+				}
+				#wrap .btn p.click{
+					background-image: url("images/ckbg2.jpg");
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id="wrap">
+            <ul class="list">
+				<li class="" style="background-color:#222">朱雀</li>
+				<li class="" style="background-color:#555">心艾</li>
+				<li style="background-color:#888">发发</li>
+				<li class="" style="background-color:#bbb">七七</li>
+				<li style="background-color:#222">岚岚</li>
+				<li style="background-color:#555">艾米</li>
+				<li class="" style="background-color:#888">丫丫</li>
+				<li class="" style="background-color:#bbb">风屿</li>
+			</ul>
+            <div class="btn">
+                <p class="all">全选</p>
+                <p class="fan" style="background-image: none">反选</p>
+            </div>
+        </div>
+		<script>
+			(function (){
+				 //获取元素
+				 var aLi = document.querySelectorAll("li"),
+					oAll= document.getElementsByClassName("all"),
+					oFan = document.getElementsByClassName("fan"),
+					len = aLi.length;
+					//li标签点击事件
+				(function (){
+					for (var i = 0;i<len ;i++ ){
+						aLi[i].onclick = function (){
+							this.classList.toggle("click");
+							for (var i =0;i<len ; i++){
+								if (!aLi[i].classList.contains("click")){ //当for循环检测到li标签未全部添加click样式 oAll不添加样式 
+									oAll[0].classList.remove("click");
+									return;  //结束代码执行
+								}
+							}
+							oAll[0].classList.add("click");//
+						}
+					}
+				})();
+				
+				//全选  
+				oAll[0].onclick =function (){
+					this.classList.toggle("click");
+					/*if (this.classList.contains("click")){
+						for (var i= 0;i<len ;i++ ){
+							aLi[i].classList.add("click");
+						}
+					}else{
+						for (var i= 0;i<len ;i++ ){
+							aLi[i].classList.remove("click");
+						}
+					}*/
+					var op = this.classList.contains("click")?"add":"remove";
+					for (var i= 0;i<len ;i++ ){
+							aLi[i].classList[op]("click");
+						}
+				}
+				//反选
+				oFan[0].onclick =function (){
+					var ifClick = true;
+					for (var i= 0;i<len ;i++ ){
+							aLi[i].classList.toggle("click");
+							if (!aLi[i].classList.contains("click")){
+								oAll[0].classList.remove("click");
+								ifClick = false;
+							}
+					}
+					ifClick && oAll[0].classList.add("click");
+				}
+			})();
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

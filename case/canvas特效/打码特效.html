@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打码工具</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+        .mosaic{
+            width: 500px;
+            height: 550px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+        }
+        .imgbox{
+            width: 100%;
+            height:500px;
+            border-bottom: 1px dashed #ccc; 
+        }
+        .controlBox{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 49px;
+        }
+        .upload,.download{
+            width:49px;
+            height:49px;
+        }
+        .upload{
+            background: url("./img/upload.png") no-repeat;
+            background-size: 49px;
+        }
+        .upload>input{
+            display: block;
+            width: 100%;
+            height:100%;
+            opacity: 0;
+        }
+        .download{
+            background: url("./img/download.png") no-repeat;
+            background-position-y: 4px; 
+            background-size: 49px;
+          
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="mosaic">
+        <div class="imgbox">
+            <canvas   class="drawBox" width="500" height="500"></canvas>
+        </div>
+        <div class="controlBox">
+            <div class="upload"><input type="file" id="selectPic"></div>
+            <div class="download" ></div>
+        </div>
+    </div>
+    
+    <script>
+        
+        let selectPic = document.querySelector("#selectPic");
+        let downBtn = document.querySelector(".download");
+        let canvas = document.querySelector(".drawBox");
+        let canCon = canvas.getContext("2d");
+
+        let step = 10; //马赛克 打码区域大小
+
+        selectPic.onchange = function(){
+            //清除canvas 的内容
+            canCon.clearRect(0,0,500,500);
+            //图片的地址
+            let url = window.URL.createObjectURL(this.files[0]);
+            let img = new Image();
+            img.src = url;
+            img.onload = function(){
+                let w = img.naturalWidth;
+                let h = img.naturalHeight; //获得图片的原有的宽高
+                let nw,nh; //按比例缩小后的宽高
+                let startX=0,startY=0; //图片 居中
+
+                if(w>h){
+                    nw = 500;
+                    nh = (500*h)/w;
+                    startY= (500-nh)/2;
+                }else{
+                    nh = 500;
+                    nw = (500*w)/h;
+                    startX= (500-nw)/2;
+                    //设置 图片尺寸 最大为500  然后按比例减小
+                }
+                console.log(startX,startX)
+                canCon.drawImage(img,startX,startY,nw,nh)
+            }
+        }
+        downBtn.onclick = function(){
+            let a = document.createElement("a"); //创建一个a标签
+            a.href = canvas.toDataURL("image/png",1);
+            a.download = "打码后文件.png";
+            a.click();
+        }
+
+        canvas.addEventListener("mousedown" , mosaic);
+        canvas.addEventListener("mousemove" , mosaic);
+        canvas.addEventListener("mouseup" , mosaic);
+
+        let toggle = false;
+        function mosaic(ev){
+            ev = ev ||window.enent;
+            switch (ev.type) {
+                case "mousedown":
+                    toggle = true;
+                    setMosaic(ev.offsetX,ev.offsetY);
+                break;
+                case "mousemove":
+                    if(toggle){
+                        setMosaic(ev.offsetX,ev.offsetY);
+                    }
+                break;
+                case "mouseup":
+                    toggle = false;
+                break;
+            }
+        }
+        function setMosaic(x,y){
+            let colorData = restore(canCon.getImageData((x-(step/2)),(y-(step/2)),step,step).data,4);
+            let vr = 0,vg = 0,vb = 0;
+            let al = colorData.length;
+            for(let i =0; i<al; i++){
+                vr += colorData[i][0];
+                vg += colorData[i][1];
+                vb += colorData[i][2];
+
+            }
+            canCon.fillStyle = `rgb(${Math.round(vr/al)},${Math.round(vg/al)},${Math.round(vb/al)})`;
+            canCon.fillRect((x-(step/2)),(y-(step/2)),step,step);
+        }
+
+        function restore(arr,stepSize){
+            let arrList = [],
+            index = 0,
+            num = parseInt(arr.length/stepSize);
+            for(let i = 0; i < num; i++){
+                arrList.push(arr.slice(index,stepSize+index));
+                index += stepSize;
+            }
+            return arrList;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				.list{
+					margin: 80px auto;
+					width: 1000px;
+					height: 500px;
+					border: 1px solid #000;
+				}
+				.list>li{
+					float: left;
+					/* width: 100px; */
+					height: 500px;
+				}
+				.list li:nth-child(1),.list li:nth-child(1) .bg{
+					background: url("./images/1.jpg") center/cover;
+				}
+				.list li:nth-child(2),.list li:nth-child(2) .bg{
+					background: url("./images/2.jpg") center/cover;
+				}
+				.list li:nth-child(3),.list li:nth-child(3) .bg{
+					background: url("./images/3.jpg") center/cover;
+				}
+				.list li:nth-child(4),.list li:nth-child(4) .bg{
+					background: url("./images/4.jpg") center/cover;
+				}
+				.list li input[name="change"]{
+					display: block;
+					width: 100px;
+					height: 500px;
+					opacity: 0;
+					transition: .3s;
+
+				}
+				.list li input[name="change"]:checked{
+					width: 700px;
+				}
+				.list li .bg{
+					position:fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: -1;
+					opacity: 0;
+					transition: .3s;
+					filter: blur(3px);
+				}
+				.list li input[name="change"]:checked+.bg{
+					opacity: 1;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<ul class="list">
+			<li>
+				<input type="radio" name="change" checked>
+				<div class="bg"></div>
+			</li>
+			<li>
+				<input type="radio" name="change">
+				<div class="bg"></div>
+			</li>
+			<li>
+				<input type="radio" name="change">
+				<div class="bg"></div>
+			</li>
+			<li>
+				<input type="radio" name="change">
+				<div class="bg"></div>
+			</li>
+		</ul>
+	 </body>
+</html> <!-- 结束标签-->

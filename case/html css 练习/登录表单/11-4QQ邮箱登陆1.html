@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0px;
+				padding: 0px;
+			}
+			body{
+				padding: 50px;
+			}
+			
+			.box{
+				border: 1px solid grey;
+				/* height: 300px; */
+				width: 300px; 
+				
+			}
+			.box .title{
+				text-align: center;
+				border-bottom: 1px solid grey;
+			}
+			.box .title a{
+				color: #999999;
+				
+				text-decoration: none;
+				padding: 10px 10px;
+				display: inline-block;
+			}
+			.box .title a:hover{
+				color: #333;
+			}
+			.box .title a:focus{
+				/* 获取光标 焦点 */
+				color: #333;
+			}
+			
+			
+			.box form{
+				padding: 18px;
+			}
+			.box form table{
+				width: 100%;
+			}
+			.box form table tr{}
+			.box form table tr .text-left{
+				text-align: left;
+				padding-left: 5px;
+			}
+			.box form table tr td{
+				text-align: center;
+				height: 50px;
+			}
+			.box form table tr td input{
+				height: 30px;
+				width: 260px;
+				padding: 0px 5px;
+			}
+			.box form table tr td .checkbox{
+				width: auto;
+				vertical-align: middle;
+				transform: scale(1.2);   /* 变形 */
+				  /* !important提高优先级 */
+
+			}
+			.box form table tr td label{
+				vertical-align: middle;
+				padding: 0px 10px;
+			}
+			.box form table tr td button{
+				width: 260px;
+				padding: 10px 30px;
+				background: #1D5494;
+				color: white;
+				font-size: 18px;
+				font-weight: 600;
+				cursor: pointer;
+			}
+			.box form table tr td button span{
+				display: inline;
+				padding: 0px 5px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="title">
+				<a href="#">快速登录</a>
+				<a href="#">账号密码登录</a>
+			</div>
+			<form>
+				<table>
+					<tr>
+						<td><input type="text"/></td>
+					</tr>
+					<tr>
+						<td><input type="password"/></td>
+					</tr>
+					<tr>
+						<td class="text-left"><input class="checkbox" type="checkbox"/><label>下次自动登录</label></td>
+					</tr>
+					<tr>
+						<td><button type="button">登<span></span>录</button></td>
+					</tr>
+				</table>
+			</form>
+			
+		</div>
+	</body>
+</html>

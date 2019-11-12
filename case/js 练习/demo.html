@@ -1,0 +1,185 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				.fl{float:left;}
+				.fr{float:right;}
+				#wrap{
+					height:580px;
+					background:linear-gradient(180deg,#8CC1DE,#F9A886);
+					overflow:hidden;
+				}
+				#wrap .container{
+					width:800px;
+					margin:50px auto;
+				}
+				#wrap .container .target{
+					width:50%;
+					background-color: #fff;
+					line-height:2;
+					min-height:550px;
+				}
+				#wrap .container .target p{
+					margin:50px 20px 0;
+					color:#F9A886;
+				}
+				#wrap .container .target a{
+					background-color: #fff;
+					text-decoration: none;
+					color:#000;
+				}
+				#wrap .container .target a:hover{
+					color:red;
+				}
+				#wrap .container .target ol li{
+					list-style: none;
+					font-style:normal;
+					display: inline-block;
+					margin:10px 0 0 20px ;
+					padding:0 5px;
+					color:#999;
+					border:1px solid #ccc;
+
+				}
+				#wrap .container .target ol li:hover i{
+					color:red;
+					cursor:pointer;
+
+				}
+				#wrap .container .target ol li span{
+					padding-right:5px;
+				}
+				#wrap .container .target ol li i{
+					padding:0 5px;
+					border-left:1px solid #ccc;
+
+				}
+				#wrap .container .show{
+					width:50%;
+					min-height:550px;
+					background-color: rgba(0,0,0,0.5);
+
+				}
+				#wrap .container .show ul{
+					margin-top:50px;
+
+				}
+				#wrap .container .show ul li{
+					list-style: none;
+					font-style:normal;
+					display: inline-block;
+					margin:20px;
+					padding:5px;
+					border:1px solid #ccc;
+					color:#fff;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		 <div id="wrap">
+			<div class="container clearfix">
+				<div class="target fl">
+					<p> 热门目的地：
+						<a href="javascript:;">马来西亚</a>
+						<a href="javascript:;">泰国</a>
+						<a href="javascript:;">三亚</a>
+						<a href="javascript:;">新西兰</a>
+						<a href="javascript:;">云南</a>
+					</p>
+					<ol class='clearfix'>
+
+
+					</ol>
+				</div>
+				<div class="show fr">
+					<ul class='clearfix'>
+
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	<script>
+		(function (){
+			//获取元素
+			let oA = document.querySelectorAll("#wrap .container .target a"),
+				oOl = document.querySelector("#wrap .container .target ol"),
+				oUl = document.querySelector("#wrap .container .show ul");
+			
+			//提出事件函数
+			function aClick (){
+				//判断是否重复点击
+				if(this.bool){return}
+				this.bool = true;
+				let This = this;
+				//获取点击事件的text
+				let text = this.innerText; 
+				//创建两个li标签分别添加到对应的页面中
+				let leftLi = document.createElement("li"),
+					rightLi = document.createElement("li");
+				oOl.appendChild(leftLi);
+				oUl.appendChild(rightLi);
+				//完善leftLi里面的内容
+				(function (){
+					let span = document.createElement("span"),
+						i = document.createElement("i");
+					span.innerText= text;
+					i.innerText= "X";
+					//给i添加删除事件
+					i.onclick = function (){
+						oOl.removeChild(leftLi);
+						oUl.removeChild(rightLi);
+						This.bool = false;
+					}
+					leftLi.appendChild(span);
+					leftLi.appendChild(i);
+				})();
+				//完善rgihtLi里面的内容
+				(function(){
+					let span = document.createElement("sapn");
+					span.innerText = text;
+					rightLi.appendChild(span);
+				})();
+
+			}
+			//给a标签添加点击事件
+			oA.forEach((item)=>{
+				item.onclick = aClick;
+			});
+		})();
+	</script>
+	 </body>
+</html> <!-- 结束标签-->

@@ -1,0 +1,109 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#wrap{
+					position: relative;
+					margin: 150px auto;
+					width: 200px;
+					height: 200px;
+				}
+				/* 菜单效果 */
+				#wrap .menu{
+					position: absolute;
+					top: 50px;
+					left: 50px;
+					width: 100px;
+					height: 100px;
+					background-color: pink;
+					border-radius: 50%;
+					text-align: center;
+					line-height: 100px;
+					cursor: pointer;
+					transform: /* translateX(-50%) translateY(-50%) */ scale(1);
+					transition: .5s;
+				}
+				/* 点击后显示的效果 */
+				#wrap.show .menu{
+					transform: scale(0);
+				}
+				
+				#wrap .small{
+					position: absolute;
+					/* top: 50%;
+					left: 50%; */
+					width: 90px;
+					height: 90px;
+					background-color: #33ffcc;
+					border-radius: 50%;
+					text-align: center;
+					line-height: 90px;
+					cursor: pointer;
+					transform: translateX(-50%) translateY(-50%) scale(0) /* 缩放比例 */;
+					transition: .2s .3s;
+				}
+				/* 点击后显示的效果 */
+				#wrap.show .small{
+				transform: scale(1);
+				}
+				/* 居中 */
+				#wrap .index.small{top: 50%;left:50%;}
+				#wrap .article.small{top: 50%;right:50%;}
+				#wrap .login.small{bottom: 50%;right:50%;}
+				#wrap .reg.small{bottom: 50%;left:50%;}
+				/* 点击后显示的效果 */
+				#wrap.show .index{top: 0;left:0;}
+				#wrap.show .article{top: 0;right:0;}
+				#wrap.show .login{bottom: 0;right:0;}
+				#wrap.show .reg{bottom: 0;left:0;}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id="wrap">
+			<p class= "menu">菜单</p>
+			<p class= "index small">首页</p>
+			<p class= "article small">文章</p>
+			<p class= "login small">登录</p>
+			<p class= "reg small">注册</p>
+		</div>
+		<script>
+			var aMenu = document.getElementsByClassName("menu"),
+				aWrap = document.getElementById("wrap");
+			aMenu[0].onclick = function (){
+				aWrap.classList.add("show"); //添加点击事件
+			};
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+		<!--<link rel="stylesheet" href="src/css/layui.css" />-->
+	</head>
+	<bod y>
+		<div id="app">
+			<h1>天气不错</h1>
+		</div>
+		
+		
+		<script>
+			let home ={
+				template:`<h1 style='background:blue;'>欢迎来到vue的世界</h1>`
+			}
+			
+			let foo ={
+				template:`<h1 style='background:blue;'>foo界</h1>`
+			}
+			
+			let bar ={
+				template:`<h1 style='background:red;'>bar界</h1>`
+			}
+			
+			let side ={
+				template:`<h1 style='background:red;'>side</h1>`
+			}
+			
+			let banner ={
+				template:`<h1 style='background:red;'>bnner</h1>`
+			}
+			
+			let routes =[
+				{
+					path:"/foo",
+					components:{
+						default:foo,
+						a:side,
+						b:banner
+					}
+				},
+				{
+					path:"/bar",
+					component:bar
+				}
+			]
+			
+			let router = new VueRouter({
+				routes
+			})
+			
+			let ele = new Vue({
+				el:"#app",
+				router,
+				components:{
+					home
+				}
+			})
+		</script>
+	</body>
+</html>

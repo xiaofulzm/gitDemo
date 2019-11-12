@@ -1,0 +1,423 @@
+
+	/*头部导航*/
+#header{
+	position: relative;
+	width: 1920px;
+	background-color: #2c86d7;
+	z-index: 1;
+	
+}
+#header .nav{
+	position: relative;
+	width: 1170px;
+	height: 100px;
+	transform: translateX(375px);
+	z-index: 2;
+}
+#header .nav .nav-left{
+	display: inline-block;
+	width: 500px;
+	height: 100%;
+} 
+#header .nav .nav-left ul {
+	width: 500px;
+	height: 100%;
+}
+#header .nav-left ul li{
+	width: 100px;
+	height: 100%;
+	text-align: center;
+	float: left;
+}
+#header .nav-left ul li:hover{
+	
+	background-color: #f8c34c;
+}
+#header .nav-left ul li a{
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 100px;
+}
+
+#header .nav .nav-right{
+	display: inline-block;
+	transform: translateX(150px);
+	width: 500px;
+	height: 100%;
+} 
+#header .nav .nav-right ul {
+	width: 500px;
+	height: 100%;
+}
+#header .nav-right ul li{
+	width: 100px;
+	height: 100%;
+	text-align: center;
+	float: left;
+}
+#header .nav-right ul li:hover{
+	background-color: #f8c34c;
+}
+#header .nav-right ul li a{
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+	line-height: 100px;
+}
+
+
+
+#header .nav .logo{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-82px);
+	width: 150px;
+	height: 150px;
+	text-align: center;
+}
+
+
+
+
+/* 轮播图片区域*/
+#banner{
+	position: relative;
+	width:1920px;
+	height: 570px;
+	/*border: 1px solid aquamarine;*/
+}
+#banner .pic{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#banner .pic ul li{
+	position: absolute;
+	display: none;
+}
+#banner .pic ul li img{
+	width:100%;
+	height: 570px;
+}
+
+
+/*左右按钮*/
+#banner .btn{
+	display: none;
+}
+#banner .btn div{
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	width: 35px;
+	height: 60px;
+	background: rgba(122,32,56,0.6);
+	color: blueviolet;
+	font-size: 24px;
+	text-align: center;
+	line-height: 60px;
+	cursor: pointer;
+}
+#banner .btn .left{
+	left: 20px;
+}
+#banner .btn .right{
+	right: 20px;
+}
+ /*底部圆圈*/
+
+#banner .tab{
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+	margin-left: -65px;
+	width: 150px;
+	height: 20px;
+/*	border: 2px solid red;*/
+}
+#banner .tab ul li {
+	margin-right:10px;
+	width: 37px;
+	height: 10px;
+	background-color: #a8a9a4;
+	float: left;
+	text-align: center;
+	line-height: 10px;
+	font-size: 12px;
+	color: #ccc;
+	cursor: pointer;
+	user-select:none; /*禁止选中*/
+}
+#banner .tab ul li.on{
+	background-color:#f8c34c;
+}
+
+
+/* 风景区域*/
+#scenery{
+	width: 1920px;
+	background-color: #edf5e1;
+}
+#scenery .content{
+	width: 100%;
+	height: 570px;
+	
+}
+#scenery .content .title{
+	position: relative;
+	width: 100%;
+	height: 120px;	
+	text-align: center;
+}
+#scenery .content .title:before{
+	position: absolute;
+	left:0;
+	top: 65px;
+	content: "";
+	width: 835px;
+	border:1px solid  #56790a;
+}
+
+#scenery .content .title:after{
+	position: absolute;
+	right: 0;
+	top: 65px;
+	content: "";
+	width: 835px;
+	border:1px solid  #56790a;
+}
+
+#scenery .title h2{
+	display: inline-block;
+	position: relative;
+	font-size: 36px;
+	font-weight:800;
+	color: #56790a;
+	line-height: 120px;
+}
+
+#scenery .title h2:after{
+	position: absolute;
+	top: 50px;
+	left: -51px;
+	content: "";
+	height: 30px;
+	border:1px solid  #56790a;
+}
+#scenery .title h2:before{
+	position: absolute;
+	top: 50px;
+	right: -51px;
+	content: "";
+	height: 30px;
+	border:1px solid  #56790a;
+}
+
+#scenery .column{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin: auto;
+	width: 1160px;
+	height: 360px;
+	/*background-color: aliceblue;*/
+	
+	
+}
+#scenery .column li{
+	position: relative;
+	width:230px;
+	height: 360px;
+}
+
+/* css3 动画*/
+#scenery .column li span{
+	position:absolute; 
+	background-color:white; 
+	transition:all 1s;
+}
+#scenery .column li span:nth-child(1){
+	top:2%; 
+	right:2%; 
+	width:96%; 
+	height:1px; 
+	transition-delay: 3s;
+}
+#scenery .column li:hover span:nth-child(1){
+	width:0%;
+	transition-delay:0s;
+}
+#scenery .column  li span:nth-child(2){
+	bottom:2%; 
+	right:2%; 
+	width:1px; 
+	height:96%; 
+	transition-delay: 2s;
+}
+#scenery .column  li:hover span:nth-child(2){
+	height:0%;
+	transition-delay:1s;
+}
+#scenery .column li span:nth-child(3){
+	bottom:2%; 
+	left:2%; 
+	width:96%; 
+	height:1px; 
+	transition-delay: 1s;
+}
+#scenery .column li:hover span:nth-child(3){
+	width:0%;
+	transition-delay:2s;
+}
+#scenery .column li span:nth-child(4){
+	top:2%; 
+	left:2%; 
+	width:1px; 
+	height:96%; 
+	transition-delay: 0s;
+}
+#scenery .column li:hover span:nth-child(4){
+	height:0%;
+	transition-delay:3s;
+}
+
+/*css3d动画结束*/
+
+
+#scenery .column li:nth-child(1){
+	background: url("../images/1.png") no-repeat center/cover ;
+}
+#scenery .column li:nth-child(1) p{
+	width: 20px;
+	height: 70px;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	transform: translateX(190px) translateY(10px);
+	/*transform: translateY(10px);*/
+}
+#scenery .column  li:nth-child(2){
+	width: 480px;
+	height: 360px;
+}
+#scenery .column  li:nth-child(3){
+	width: 200px;
+	background: url("../images/5.png") no-repeat center/cover ;
+}
+#scenery .column li:nth-child(3) p{
+	width: 20px;
+	height: 100px;
+	color: white;
+	font-size: 18px;
+	transform: translateX(160px) translateY(10px);
+}
+#scenery .column li:nth-child(4){
+	width: 200px;
+	background: url("../images/6.png") no-repeat center/cover ;
+}
+#scenery .column li:nth-child(4) p{
+	width: 20px;
+	height: 100px;
+	color:#CCCCCC;
+	font-size: 18px;
+	transform: translateX(160px) translateY(10px);
+}
+#scenery .column .sub{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	width: 480px;
+	height: 350px;
+}
+#scenery .column .sub li:nth-child(1){
+	width: 100%;
+	height: 170px;
+	background: url("../images/2.png") no-repeat center/cover ;
+}
+#scenery .column .sub li:nth-child(1) p{
+	width: 120px;
+	height: 20px;
+	color: white;
+	font-size: 18px;
+	transform: translateX(320px) translateY(140px);
+}
+#scenery .column .sub li:nth-child(2){
+	width: 230px;
+	height: 170px;
+	background: url("../images/3.png") no-repeat center/cover ;
+}
+#scenery .column .sub li:nth-child(2) p{
+	width: 80px;
+	height: 20px;
+	color: white;
+	font-size: 18px;
+	transform: translateX(145px) translateY(140px);
+}
+#scenery .column .sub li:nth-child(3){
+	width: 230px;
+	height: 170px;
+	background: url("../images/4.png") no-repeat center/cover ;
+}
+#scenery .column .sub li:nth-child(3) p{
+	width: 80px;
+	height: 20px;
+	color: white;
+	font-size: 18px;
+	transform: translateX(145px) translateY(140px);
+}
+
+
+
+#introduce{
+	width: 1920px;
+	background-color: #e3f7f3;
+}
+#introduce .content{
+	box-sizing: border-box;
+	padding-top: 80px;
+	width: 100%;
+	height: 570px;
+	
+}
+#introduce .content .guild{
+	margin: auto;
+	width: 1160px;
+	height: 410px;
+	background-color: white;	
+}
+
+#introduce .content .guild  ul{
+	width: 120%;
+}
+#introduce .content .guild  ul li{
+	list-style:none;
+	width:60px;
+	height:410px;
+	float:left;
+	overflow:hidden;
+	background-color: white;
+}
+#introduce .content .guild ul li .txt{
+	position: relative;
+	width:860px;
+	height:410px;
+	/*background: red ;*/
+	transform: translateX(60px);
+	overflow:hidden;
+	user-select：none;
+}
+
+#introduce .guild ul li .txt #wrapper { box-sizing:border-box;width:800px; height:410px; margin:10px auto; background:#fff; /*border-top:4px solid #eee*//*; border-left:4px solid #eee;*/ padding:20px}
+#introduce .guild ul li .txt #scroll {position:relative;top:0px; width:760px; height:350px; overflow:auto}
+#introduce .guild ul li .txt #scrollcontent {position:absolute;left: 100px; width:350px; z-index:200}
+#introduce .guild ul li .txt #scrollbar {float:right; position:relative; display:none; width:15px; height:320px; z-index:100; background:url(../images/scroll-bg.gif)}
+#introduce .guild ul li .txt .scroller {position:absolute; top:0; width:15px; cursor:pointer; background-color:#ccc; background-image:url(../images/scroll-arrows.gif); background-position:50% 50%; background-repeat:no-repeat}
+#introduce .guild ul li .txt .buttonclick {background-color:#bbb}
+
+#introduce .guild ul li .txt #scrollcontent p{
+	text-indent: 2em; 
+}

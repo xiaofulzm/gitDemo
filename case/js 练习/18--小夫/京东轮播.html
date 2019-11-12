@@ -1,0 +1,236 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#box{
+					position: relative;
+					margin: 80px auto;
+					width: 590px;
+					height: 470px;
+					border: 1px solid blue;
+					cursor: pointer;
+				}
+				/* 图片区域 */
+				#box .list{
+					width: 100%;
+					height: 100%;
+				}
+				#box .list li{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					z-index: 0;
+					transition: opacity 1s;
+				}
+				#box .list li.show{
+					opacity: 1;
+					z-index: 1;
+				}
+				/* 按钮 */
+				#box .btn{
+					position: absolute;
+					left: 30px;
+					bottom: 20px;
+					width: 300px;
+					height: 30px;
+					list-style-type: none;
+					z-index: 2;
+				}
+				#box .btn li{
+					position: relative;
+					top: 30%;
+					margin-left: 20px;
+					float: left; 
+					width: 6px;
+					height: 6px;
+					border: 2px solid #2f002f;
+					border-radius: 50%;
+				}
+				#box .btn li.show{
+					background-color: rgba(0,0,0,1);
+					border: 2px solid rgba(0,0,0,1);
+					box-shadow: 0px 0px 0px 5px rgba(255,255,255,.5);
+				}
+				/* 左右按钮 */
+				#box .left-btn{
+					position: absolute;
+					top: 50%;
+					left: 20px;
+					box-sizing: border-box;
+					margin-top: -25px;
+					padding: 10px 10px;
+					width: 50px;
+					height: 50px;
+					background-color: rgba(0,0,0,.3);
+					text-align: center;
+					line-height: 50px;
+					z-index: 2;
+				}
+				#box .left-btn:hover{
+					background-color: rgba(0,0,0,.7);
+				}
+				#box .left-btn img{
+					transform: translateX(-7px) translateY(-5px);
+					display: inline;
+					width: 30px;
+					height: 30px;
+				}
+				#box .right-btn{
+					position: absolute;
+					top: 50%;
+					right: 20px;
+					box-sizing: border-box;
+					margin-top: -25px;
+					padding: 10px 10px;
+					width: 50px;
+					height: 50px;
+					background-color: rgba(0,0,0,.3);
+					text-align: center;
+					line-height: 50px;
+					z-index: 2;
+				}
+				#box .right-btn:hover{
+					background-color: rgba(0,0,0,.7);
+				}
+				#box .right-btn img{
+					transform: translateX(0px) translateY(-5px);
+					display: inline;
+					width: 30px;
+					height: 30px;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id= "box">
+			<!-- 图片区域 -->
+			<ul class="list .clearfix">
+				<li class="show"><img src = "./images/1.jpg" width="590" heigth= "470" alt="图片"></li>
+				<li><img src = "./images/2.jpg" width="590" heigth= "470" alt="图片"></li>
+				<li><img src = "./images/3.jpg" width="590" heigth= "470" alt="图片"></li>
+				<li><img src = "./images/4.jpg" width="590" heigth= "470" alt="图片"></li>
+				<li><img src = "./images/5.jpg" width="590" heigth= "470" alt="图片"></li>
+				<li><img src = "./images/6.jpg" width="590" heigth= "470" alt="图片"></li>
+				<li><img src = "./images/7.jpg" width="590" heigth= "470" alt="图片"></li>
+				<li><img src = "./images/8.jpg" width="590" heigth= "470" alt="图片"></li>
+			</ul>
+			<!-- 按钮区 -->
+			<div class="btn">
+				<li class="show"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</div>
+			<!-- 左右按钮 -->
+			<div class="left-btn">
+				<img src=" ./images/xiangzuo.png">
+			</div>
+			<div class="right-btn">
+				<img src=" ./images/xiangyou.png">
+			</div>
+		</div>
+		<script>
+			(function (){
+				//获取元素
+				var oBox = document.getElementById("box"),
+					aImg = document.querySelectorAll("#box .list li"),
+					aBtn = document.querySelectorAll("#box .btn li"),
+					oLeft = document.querySelector("#box .left-btn"),
+					oRight = document.querySelector("#box .right-btn"),
+					len = aImg.length,
+					number= 0,
+					time = null;
+				//定义函数
+				function fn(){
+					aBtn.forEach(function (ele,i){
+						
+						/*var n = i === number? "add": "remove";
+							ele.classList[n]("show");
+							aImg[i].classList[n]("show");
+						*/
+						if(i === number){
+							ele.classList.add("show")
+							aImg[i].classList.add("show")
+						}else{
+							ele.classList.remove("show")
+							aImg[i].classList.remove("show")
+						}
+					})
+				}
+				//按钮区域
+				aBtn.forEach(function (ele,i){
+					ele.onmouseenter =function (){
+						number =i;
+						fn();
+					}
+				})
+				//右按钮
+				oRight.onclick =function (){
+					number++;
+					if (len<=number){number =0}
+					fn();
+				}
+				//左按钮
+				oLeft.onclick =function (){
+					number--;
+					if (0>number){number = len-1};
+					fn();
+				}
+				//定时器
+				function lzm(){
+					 time = setInterval(function (){
+						number++;
+						if (len<=number)number =0;
+						fn();
+					},3000);
+
+				}
+				lzm();
+				//当鼠标移入轮播停止
+				oBox.onmouseenter =function (){
+					clearTimeout(time);
+				}
+				//当鼠标溢出的时候轮播继续
+				oBox.onmouseleave = lzm;
+			})();
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

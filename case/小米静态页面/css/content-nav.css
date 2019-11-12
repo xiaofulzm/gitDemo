@@ -1,0 +1,78 @@
+@charset "utf-8";
+#content .content-nav .content-nav-c{
+    margin:15px auto 0;
+}
+#content .content-nav .content-nav-c .nav-c-bottom{
+    display:flex;
+    justify-content: space-between;
+    height:px;
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li{
+    width:295px;
+    height:415px;
+    background-color:#fff;
+    text-align: center;
+    transition:.3s;
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 2px 3px #ccc;
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li:nth-child(1){
+    border-top:1px solid rgb(236, 116, 46);
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li:nth-child(2){
+    border-top:1px solid rgb(25, 202, 105);
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li:nth-child(3){
+    border-top:1px solid rgb(236, 52, 46);
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li:nth-child(4){
+    border-top:1px solid rgb(81, 46, 236);
+}
+#content .content-nav-c .nav-c-bottom>li .swiper-container{
+    width:295px;
+    height:360px;
+}
+#content .nav-c-bottom>li .swiper-container .swiper-button-prev,
+#content .nav-c-bottom>li .swiper-container .swiper-button-next{
+    background-color:#ccc;
+    opacity: 0;
+    transition:.3s;
+}
+#content .nav-c-bottom>li:hover .swiper-container .swiper-button-prev,
+#content .nav-c-bottom>li:hover .swiper-container .swiper-button-next{
+    opacity: 1;
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li img{
+    display: block;
+    width:160px;
+    height:140px;
+    margin:0 auto;
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li h3{
+    margin:10px 0 10px;
+}
+#content .nav-c-bottom>li .swiper-slide>span{
+    display:block;
+    font-size:12px;
+    color:rgb(196, 190, 190);
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li p{
+    margin-top:10px;
+    color:#ee6700;
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li .more{
+    display:block;
+    width:100px;
+    height:20px;
+    border:1px solid #ee6700;
+    margin:20px auto 30px;
+    color:#ee6700;
+    font-size:12px;
+    transition:.3s;
+}
+#content .content-nav .content-nav-c .nav-c-bottom>li .more:hover{
+    background-color:#ee6700;
+    color:#fff;
+}

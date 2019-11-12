@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>京东购物车</title>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet"
+			 href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+			 ntegrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+			 crossorigin="anonymous">
+	</head>
+	<body>
+		<div id="app" class="container">
+			<table class="table">
+				<caption class="h1 text-center text-danger">京东购物车</caption>
+				<tr>
+					<td>
+						<label for="">全选</label>
+						<input type="checkbox" id="all" v-model="all" @change="checKAll"/>
+					</td>
+					<td>商品</td>
+					<td>商品描述</td>
+					<td>单价</td>
+					<td>数量</td>
+					<td>小计</td>
+					<td>操作</td>
+				</tr>
+				
+				<tr v-for="(product,index) of products">
+					<td>
+						<input type="checkbox" v-model="product.isSelected" @change="checkSingle"/>
+					</td>
+					<td>
+						<img :src="product.imgUrl" alt="" />
+					</td>
+					<td>{{product.bookName}}</td>
+					<td>{{product.price}}</td>
+					<td>
+						<input type="number" v-model="product.amount" min="0" />
+					</td>
+					<td>{{product.price*product.amount|xxx(2)}}</td>
+					<td>
+						
+						<button type="button" class="btn btn-danger" @click="handleDeleteItem(index)">删除</button>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>{{sum|xxx(2)}}</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!--子组件-->
+		<template id="hide">
+			
+		</template>
+		
+		<script src="../src/vue.js"></script>
+		
+		<script>
+			
+			
+			
+			let vm = new Vue({
+				el:'#app',
+				filters:{  //过滤器       过滤器的作用     不改变数据的情况   只改变数据的页面展示
+					xxx(price,num){
+						return '￥'+price.toFixed(num)+'元'
+						//保留两位有效数组
+					}
+					
+				},
+				data:{
+					all:false,
+					products:[  //初始的数据
+						{
+		                    isSelected:false,
+		                    imgUrl:"https://img10.360buyimg.com/cms/s80x80_jfs/t6094/107/710811867/382815/4d54717/592bf165N755a88f0.jpg",
+		                    bookName:'深入浅出Node.js',
+		                    price:	54.50,
+		                    amount:1,
+                		},
+                		{
+		                    isSelected:false,
+		                    imgUrl:"https://img10.360buyimg.com/cms/s80x80_jfs/t9508/97/2285719018/62961/99c5b1b7/59f299b4Nc9e78adb.jpg",
+		                    bookName:'Vue.js实战',
+		                    price:	62.4,
+		                    amount:1,
+	               		 }
+					]
+				},
+				computed:{
+					sum(){
+						return this.products.reduce((pre,next)=>{
+							return pre+(next.isSelected?next.price*next.amount:0);
+							  //求数组 中各项的和  
+						},0)
+					}
+				},
+				methods:{
+					checKAll(){
+						this.products.forEach((product)=>{
+							product.isSelected = this.all
+						})
+					},
+					checkSingle(){
+						console.log('chufa');
+						this.all = this.products.every(product=> product.isSelected)
+						// every 所有数组成员都满足条件  返回为true
+					},
+					handleDeleteItem(index){
+						this.products.splice(index,1);
+					}
+				}
+
+				
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* 轮播样式 */
+#carousel .carousel-content{
+    position: relative;
+    margin:0 auto;
+}
+#carousel .carousel-content .swiper-container{
+    height:460px;
+}
+#carousel .carousel-content .swiper-button-prev{
+    transform:translateX(235px);
+}
+/* swiper-container的z-index默认为1 */
+/* 大轮播图 */
+#carousel .carousel-content .carousel-nav{
+    position: absolute;
+    top:0;
+    left:0;
+    width:234px;
+    height:460px;
+    background-color:rgba(0,0,0,0.5);
+    z-index:2;
+}
+#carousel .carousel-content .list{
+    margin: 20px 0;
+}
+#carousel .carousel-content .list>li>a{
+    display:block;
+    width:234px;
+    color:#fff;
+    font-size:12px;
+    line-height:42px;
+    text-indent:25px;
+}
+#carousel .carousel-content .list>li>a:hover{
+    background-color:#ff6700;
+}
+#carousel .carousel-content .list .more-goods{
+    display:flex;
+    visibility: hidden;
+    position: absolute;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    top:0;
+    left:234px;
+    width:498px;
+    height:430px;
+    padding:20px 0 10px 0;
+    background-color:#fff;
+    box-shadow: 0 2px 5px #ccc;
+    
+}
+#carousel .carousel-content .list .more-goods>li{
+    width:249px;
+    height:71px;
+    /* background-color: #ff6700; */
+}
+#carousel .carousel-content  .more-goods>li img{
+    vertical-align: middle;
+    padding-left:20px;
+}
+#carousel .list>li .more-goods>li>a{
+    font-size:12px;
+}
+#carousel .list>li .more-goods span:hover{
+    color:#ff6700;
+}
+#carousel .carousel-content  .list>li:nth-child(1):hover .more-goods,
+#carousel .carousel-content  .list>li:nth-child(2):hover .more-goods{
+    visibility: visible;
+}

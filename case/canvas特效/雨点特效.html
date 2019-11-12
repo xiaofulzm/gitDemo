@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas雨点</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            display: block;
+            background-color: rgb(7, 7, 7);
+        }
+    </style>
+
+</head>
+
+<body>
+    <audio src="./audio/rain.mp3"   autoplay loop="true"></audio>
+    <canvas></canvas>
+    <script>
+            let audio = document.querySelector("audio");
+            let lzm = true;
+            document.onclick = function(){
+				if( lzm ){
+                    lzm = false;
+					audio.play();
+				}else{
+                    lzm = true;
+                    audio.pause();
+                }
+			}
+            audio.volume = 0.3;
+
+        let canvas = document.querySelector("canvas");
+        let canCon = canvas.getContext("2d");
+        let w, h;
+        let rainArry= []; //存储新生成的雨滴
+        ~~function setSize() {
+            window.onresize = arguments.callee; //类数组  指函数本身 属性包含当前正在执行的函数
+            w = window.innerWidth;
+            h = window.innerHeight; //获得浏览器的宽高
+            canvas.width = w;
+            canvas.height = h; //给canvas设置可绘制区域
+
+        }();
+
+        function random(min, max) {
+            return Math.random() * (max - min) + min;  //定义一个随机函数
+        }
+        //实例化 一个实例
+        class Rain {
+            constructor() {
+                 
+            }
+            init(){
+                this.y = 0; //雨滴的初始化Y轴坐标
+                this.x = random(0, w);//雨滴的初始化X轴坐标
+                this.v = random(2,4); //雨滴下落的速度
+                this.h = random(0.8*h,0.93*h); //雨滴绽放的位置
+                this.r = 2; //圆的初始半径
+                this.maxR = 50; //圆的最大 半径
+                this.a = 1; //圆的透明度变换
+                this.va = random(0.9,0.98)
+            }
+            draw() {
+                //判断 当雨滴落到 屏幕下方时 画圆
+                if(this.y<this.h){
+                    canCon.fillStyle = `rgb(167,196,240)`;
+                    canCon.fillRect(this.x, this.y, 2, 10);
+                }else{
+                    canCon.strokeStyle=`rgba(167,196,240,${this.a})`
+                    canCon.beginPath();
+                    canCon.arc(this.x,this.y,this.r,0,Math.PI*2);
+                    canCon.stroke();
+                }
+            }
+            move(){
+                //判断 当雨滴落到 屏幕下方时 雨滴停止下落 变化为圆
+                if(this.y<this.h){
+                    this.y+=this.v;
+                   
+                }else{
+                    if(this.a>0.05){
+                        //判断圆的 大小 何时绽放
+                        this.r++;
+                        this.a*=this.va;
+                    }else{
+                        this.init();
+                    }
+                    
+                }
+                this.draw();
+            }
+        }
+
+        function createRain(num) {
+            //循环创建雨点
+            for (let i = 0; i < num; i++) {
+                setTimeout(function () {
+                    let rain = new Rain();
+                    rain.init();
+                    rain.draw();
+                    rainArry.push(rain);
+                }, 200 * i)
+
+            }
+        }
+        createRain(50);
+        // 下落定时器
+        setInterval(() => {
+            canCon.fillStyle= "rgba(0,0,0,0.2)";
+            canCon.fillRect(0,0,w,h); //创建一个蒙版
+            for( let itme of rainArry)
+            itme.move();
+        }, 1000/60);
+
+    </script>
+</body>
+
+</html>

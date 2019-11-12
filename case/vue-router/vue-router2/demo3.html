@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1> 天气不错</h1>
+			<router-link to="c"> go c </router-link>
+			<router-link to="e/sds/aasda"> go e</router-link>
+			<router-link to="d"> go d</router-link>
+			<router-view>
+			</router-view>
+		</div>
+		
+		<script>
+
+			
+			
+			let c={
+				template:`
+					<h2>ccccc</h2>
+				`
+			}
+			let e={
+				template:`
+					<h2>
+						宁访问的是D组件下的
+						{{this.$route.params.a}}模块
+						{{this.$route.params.b}}页
+					</h2>
+				`,
+				beforeCreate(){
+					console.log("数据被创造了 1")
+				}
+				
+			}
+			let d={
+				template:`
+					<h2>dddd</h2>
+				`
+			}
+			let routes=[
+				{
+					path:"/c",
+					component:c
+				},
+				{
+					path:"/e/:a/:b",
+					component:e,
+					beforeEnter:(to,from,next)=>{
+						console.log("to 2",to);
+						console.log("from",from);
+						console.log("next",next);
+						next();
+					}
+				},
+				{
+					path:"/d",
+					component:d
+				}
+//				{
+//					path:"/e",
+////					redirect:to=>{
+////						console.log(to)
+//////						return "/c" 重定向
+////					}
+////					alias:"/fs"    重命名
+//				}
+			]
+			
+			let router = new VueRouter({
+				routes
+			})
+//			let toggle = false;
+//			router.beforeEach( (to,from,next) =>{
+//				console.log("to",to);
+//				console.log("from",from);
+//				console.log("next",next);
+//				if(!toggle){
+//					toggle = true;
+//					next("/e")
+//				}
+//				next()
+//			} )
+			
+			new Vue({
+				el:"#app",
+				router,
+//				watch:{
+//					$route:function(){
+//						console.log(this.$route)
+//					}
+//				}
+			})
+		</script>
+	</body>
+</html>

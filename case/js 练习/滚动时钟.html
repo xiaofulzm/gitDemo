@@ -1,0 +1,159 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#box{
+					margin: 200px auto;
+					width: 500px;
+					height: 110px;
+				}
+				#box div{
+					float: left;
+				}
+				#box div.ss, #box div.ff, #box div.mm{
+					overflow: hidden;
+					width: 92px;
+					height: 60px;
+				}
+				#box div p{
+					position: relative;
+					top: 0;
+					float: left;
+					width: 40px;
+					height: 60px;
+					margin: 0 3px;
+				}
+				#box div p.show{
+					transition: top .5s;
+					top: -60px;
+				}
+				#box div p span{
+					display: block;
+					width: 40px;
+					height: 60px;
+					background: linear-gradient( to bottom,pink 0 ,pink 50%, blue 51%, blue 100%);
+					text-align: center;
+					line-height: 60px;
+					color: #fff;
+					font-size: 30px;
+					font-weight: bolder;
+					border-radius: 10px;
+				}
+				#box div.c{
+					width: 30px;
+					height: 60px;
+					text-align: center;
+					line-height: 60px;
+					font-size: 30px;
+					font-family: Dialog;
+					font-weight: bolder;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id ="box">
+			<div class="ss">
+				<p><span class="a">0</span><span class="b">0</span></p>
+				<p><span class="a">0</span><span class="b">0</span></p>
+			</div>
+			<div class="c">:</div>
+			<div class="ff">
+				<p><span class="a">0</span><span class="b">0</span></p>
+				<p><span class="a">0</span><span class="b">0</span></p>
+			</div>
+			<div class="c">:</div>
+			<div class="mm">
+				<p><span class="a">0</span><span class="b">0</span></p>
+				<p><span class="a">0</span><span class="b">0</span></p>
+			</div>
+		</div>
+		<script>
+			(function (){
+				//获取元素
+				var aP = document.querySelectorAll("#box div p"),
+					aA = document.querySelectorAll("#box div p span.a"),
+					aB= document.querySelectorAll("#box div p span.b");
+				var lzm = [];
+				
+				//当前的时间
+				function cTime (){
+					var date = new Date();
+					var ss = date.getHours(),  //当前小时
+						ff = date.getMinutes(), //当前分钟
+						mm = date.getSeconds(); //当前秒
+					//判断
+					s = ss<10? "0"+ss: ss+"";
+					f = ff<10? "0"+ff: ff+"";
+					m = mm<10? "0"+mm: mm+"";
+					return s+f+m;
+				}
+				//初始页面
+				(function (){
+					lzm = cTime();
+					aA.forEach( function (ele,i){
+						ele.innerHTML = lzm[i];
+					})
+				})();
+				//添加内容
+				function tTime (){
+					lzm = cTime()
+					aB.forEach( function (ele,i){
+						ele.innerHTML = lzm[i];
+					})
+				}
+				tTime();
+				//定时器
+				setInterval(function (){
+					init(cTime() )
+				},1000);
+				//给B添加改变内容
+				function init(time){
+					for (var i = 0;i<6 ;i++ ){
+						if (time[i] === lzm[i]){continue} //如果两个内容相同结束 进入下一次循环
+						aB[i].innerHTML = time[i];
+						aP[i].classList.add("show"); //给P标签添加样式
+						(function (i){  //闭包
+							setTimeout(function (){ //在下秒之前把还原P标签
+								aA[i].innerHTML = time[i]; //然后给a样式的span添加内容
+								aP[i].classList.remove("show");
+							},500)
+						})(i);
+					}
+					lzm = time;//把循环判断的内容  重新返回给lznm
+				}
+			})();
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

@@ -1,0 +1,108 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				        img{border:none;}
+
+				#goods{
+					width: 600px;
+					margin: 100px auto;
+					border-collapse: collapse;
+				}
+				#goods th{
+					height: 30px;
+				}
+				#goods td{
+					text-align: center;
+					height: 100px;
+				}
+				#goods td span#sub,#goods td span#add{
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					background-color: #666;
+					color: #fff;
+					cursor: pointer;
+				}
+				#goods td span#number{
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+				}
+				#goods .img{
+					background: url("./xzq.jpg") no-repeat center center/contain;
+				}
+					</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<table id="goods" border="1">
+			<tr>
+				<th>图片</th>
+				<th>单价</th>
+				<th>价格</th>
+				<th>数量</th>
+			</tr>
+			<tr>
+				<td class="img"></td>
+				<td class="danjia">20</td>
+				<td class="num">
+					<span id="sub">-</span><span id="number">0</span><span id="add">+</span></td>
+				<td class="price" id="price">0</td>
+			</tr>
+		</table>
+		<script>
+			var aDanjia = document.getElementsByClassName("danjia")[0],
+				oSub = document.getElementById("sub"),
+				oNumber = document.getElementById("number"),
+				oAdd = document.getElementById("add"),
+				oPrice = document.getElementById("price");
+			var a = 0;
+			oAdd.onclick = function (){  //添加
+				a = ++a;
+				oNumber.innerHTML = a;
+				oPrice.innerHTML = a*aDanjia.innerHTML;
+			};
+			oSub.onclick = function (){
+				a = --a;
+				oNumber.innerHTML = a;
+				oPrice.innerHTML = a*aDanjia.innerHTML;
+			}
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

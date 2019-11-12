@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				/* height: 400px; */
+				width: 360px;
+				border: 1px solid deepskyblue;
+				margin: 50px auto;
+				text-align: center;
+			}
+			.box h3{
+				line-height: 50px;
+				text-align: center;
+				background: deepskyblue;
+				color: white;
+			}
+			.box table{
+				 width: 100%;
+				 margin: 20px 0px;
+				/* border: 1px solid red; */
+			}
+			.box table tr{}
+			.box table tr td{
+				padding: 10px 0px;
+			}
+			.box table tr .td_left{
+				/* color:red; */
+				text-align: right;
+				width: 80px;
+				/* background: darkgray; */
+				padding-right: 10px;
+			}
+			/* 只希望宽度200 的INPUT 在用户名和密码上用，其他都不用，使用默认 */
+			/* .box table tr td input{
+				height: 30px;
+				width: 200px;
+				padding-left: 5px;
+			} */
+			.box table tr td .w_200{
+				height: 30px;
+				width: 200px;
+				padding-left: 5px;
+			}
+			.box table tr td label{
+				margin-left: 10px;
+				margin-right: 25px;
+			}
+			/* 标签属性选择器—— 标签名称后直接跟上一个选择器名称并且使用对应选择器定义字符连接 */
+			.box table tr td input.btn{
+				padding: 10px 20px;
+				cursor: pointer;
+				margin-right: 20px;
+				background: deepskyblue !important;
+				color: white;
+				font-weight: 600;
+				font-size: 16px;
+				border: none;
+				border-radius: 5px;
+			}
+			
+			/* 表单内提示内容，当表单内输入用户自己内容的时候，提示内容消失。 */
+			/* 在表单开始标签内增加属性 plasehold="请输入用户名" */
+			
+			.box table tr td input{
+				border: 1px solid skyblue;
+			}
+			/* 
+			 :required   表单验证
+			 */
+			.box table tr td input:required{
+				border: 1px solid skyblue;
+			}
+			.box table tr td input:valid{
+				background: none;
+				/*   当表单验证通过时的样式 */
+			}
+			.box table tr td input:invalid{
+				background:yellow;
+				border: 1px solid skyblue;
+				/*   当表单验证失败时的样式 */
+			}
+			
+			/* 当表单获取焦点时的样式 :focus */
+			.box table tr td input:focus{
+				/* 当鼠标光标选中某一个表单时候，这个被选中的表单具备的样式  :focus */
+				box-shadow: 0 0 2px 2px deepskyblue;
+			}
+			a:focus{
+				color: red;
+			}
+			a{
+				display: inline-block;
+				padding:0px 20px;
+				border-right: 1px solid gray;
+				margin: 20px 0px;
+			}
+			a:last-child{
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>用户注册</h3>
+			<form>
+				<table>
+					<tr>
+						<td class="td_left">用户名:</td>				
+						<td><input class="w_200" type="text" placeholder="请输入用户名"/></td>
+					</tr>
+					<tr>
+						<td class="td_left">密码:</td>				
+						<td><input class="w_200"  type="password" placeholder="请输入密码"/></td>
+					</tr>
+					<tr>
+						<td class="td_left">电子邮箱:</td>				
+						<td><input class="w_200" required="required"  type="email" placeholder="请输入邮箱地址"/></td>
+					</tr>
+					<tr>
+						<td class="td_left">兴趣爱好:</td>				
+						<td>
+							<input type="checkbox"/><label>足球</label>
+							<input type="checkbox"/><label>游泳</label>
+							<input type="checkbox"/><label>旅游</label>
+							<input type="checkbox"/><label>登山</label>
+							<input type="checkbox"/><label>看书</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="td_left">性别:</td>				
+						<td>
+							<input  type="radio"/ name="sex"><label>男</label>
+							<input  type="radio"/ name="sex"><label>女</label>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="td_left"></td>				
+						<td>
+							<input  class="btn"  type="submit" vavalue="提交" >
+							<input class="btn"   type="reset" vvalue="重置">
+						</td>
+					</tr>
+					
+				</table>
+			</form>
+			<a href="#">忘记密码？</a>
+			<a href="#">现在注册？</a>
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,211 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#box{
+					position: relative;
+					margin: 50px auto;
+					width: 658px;
+					height: 411px;
+				}
+				#box .img{
+					position: relative;
+					width: 100%;
+					height: 100%;
+				}
+				#box .img ul{
+					width: 100%;
+					height: 100%;
+				}
+				#box .img ul li{
+					position: absolute;
+					top:;
+					left:;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					transition: opacity .5s;
+				}
+				#box .img ul li img{
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+				#box .img ul .show{
+					opacity: 1;
+				}
+				/* 图片区域样式结束 */
+				#box .arrow div{
+					position: absolute;
+					top: 50%;
+					width: 30px;
+					height: 40px;
+					margin-top: -20px;
+					background-color: rgba(255,168,255,.3);
+					font-weight: bolder;
+					line-height: 40px;
+					text-align: center;
+					transform: 0.2s;
+					color: #fff;
+					cursor: pointer;
+				}
+				#box .arrow div:hover{
+					background-color: rgba(255,168,255,.9);
+				}
+				#box .arrow div.left{
+					left: 10px;
+				}
+				#box .arrow div.right{
+					right: 10px;
+				}
+				/* 按钮区域结束 */
+				#box .tip{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 30px;
+					font-size: 14px;
+					background-color:  rgba(0,0,0,0);
+					color: #ccc;
+					line-height: 30px;
+					text-align: center;
+				}
+				/* 切换选项区域 */
+				#box .tab{
+					position: absolute;
+					bottom: -60px;
+					width: 100%;
+					height: 40px;
+					text-align: center;
+				}
+				#box .tab p{
+					display: inline-block;
+					width: 100px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					background-color: #ccc;
+					color: #ff6699;
+					font-size: 12px;
+					cursor: pointer;
+					transition: .2s;
+				}
+				#box .tab p.active{
+					background-color: #33ccff;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id="box">
+			<!-- 图片区域 -->
+			<div class ="img">
+				<ul>
+					<li class="show"><img src ="./images/1.jpg" ></li>
+					<li><img src ="./images/2.jpg" ></li>
+					<li><img src ="./images/3.jpg" ></li>
+					<li><img src ="./images/4.jpg" ></li>
+					<li><img src ="./images/5.jpg" ></li>
+				</ul>
+			</div>
+			<!-- 按钮区域 -->
+			<div class="arrow">
+				<div class="left"> < </div>
+				<div class="right"> > </div>
+			</div>
+			<!-- 提示 -->
+			<p class="tip">第<span>1</span>/5张</p>
+			<!-- 切换选项 -->
+			<div class="tab">
+				<p class="active">单边切换</p>
+				<p >循环切换</p>
+			</div>
+		</div>
+		<script>
+			//获取元素
+			var aImgLi = document.querySelectorAll( "#box .img ul li "),
+				aArrow = document.querySelectorAll( " #box .arrow div"),
+				oTip = document.querySelector("#box .tip span" ),
+				aTab = document.querySelectorAll( "#box .tab p"),
+				len = aImgLi.length; //aLmgLi.length;
+				//定义辅助变量
+			var	index = 0,  //用来显示当前图片是哪一张
+				tabstyle = true; //表示当前显示模式
+				//右键按钮的点击
+			aArrow[1].onclick = function (){
+				aImgLi[index].classList.remove("show"); //先让当前显示的li标签隐藏
+				index++; //将辅助的index+1,以便于后面的操作
+				if (index > len-1){   //超过限制的判断
+					if (tabstyle){
+						//单边切换
+						index = len-1; //大于len.回退一步
+					}else{
+						//循环切换
+						index= 0;
+					}
+				}
+				aImgLi[index].classList.add("show");  //添加show  让下一张显示
+				oTip.innerText = index + 1;  //提示文字
+			}
+				//左键按钮的点击
+			aArrow[0].onclick = function (){
+				aImgLi[index].classList.remove("show"); //先让当前显示的li标签隐藏
+				index--; //将辅助的index+1,以便于后面的操作
+				if (index< 0){   //超过限制的判断
+					if (tabstyle){
+						//单边切换
+						index = 0; //大于len.回退一步
+					}else{
+						//循环切换
+						index= len-1;
+					}
+				}
+				aImgLi[index].classList.add("show");  //添加show  让下一张显示
+				oTip.innerText = index + 1;  //提示文字
+			}
+			//切换风个格    单边切换
+			aTab[0].onclick = function (){
+				this.classList.add("active");
+				aTab[1].classList.remove( "active");
+				tabstyle = true;  //改变辅助变量
+			}
+			aTab[1].onclick = function (){
+				this.classList.add("active");
+				aTab[0].classList.remove( "active");
+				tabstyle = false;  //改变辅助变量
+			}
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

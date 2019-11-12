@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../src/vue.js"></script>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+		<link rel="stylesheet" href="src/css/layui.css" />
+	</head>
+	<body>
+		<div id="app">
+			<home></home>
+			<p>
+				<router-link class="layui-nav-item"  to="/foo" tag="div">go to foo</router-link>
+				<router-link class="layui-nav-item" to="/bar">go to bar</router-link>
+				
+			</p>
+			<router-view></router-view>
+		</div>
+		
+		
+		
+		<script>
+			let home = {template:"<h1>欢迎来打破vue的世界</h1>"};
+			let foo ={template:`<h1>foo<button v-on:click='goBar'>go bar</button></h1>`,
+				methods:{
+					goBar(){
+						this.$router.push("/bar")
+					}
+				}
+			};
+			let bar = {
+				template:
+				`<h2>bar
+					<button v-on:click="goback"> go bar</button>
+				</h2>`,
+				methods:{
+					goback(){
+						this.$router.go(-1)
+					}
+				}
+			};
+			
+			let routes =[
+				{path:"/foo",component:foo},
+				{path:"/bar",component:bar}
+			]
+			
+			
+			let router= new VueRouter({
+				routes,
+				linkActiveClass:"layui-btn layui-btn-warm",
+				linkExactActiveClass:" layui-btn-radius"
+			})
+			
+			let ele= new Vue({
+				el:"#app",
+				router,
+				components:{
+					home
+				}
+				
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户注册表单</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.w_80{
+				width: 70px;
+				text-align: right;
+				padding-right: 10px;
+			}
+			.w_160{
+				width: 160px;
+			}
+			.text_red{
+				color: red;
+			}
+			.box{
+				border: 1px solid skyblue;
+				/* height: 500px; */
+				width: 360px;
+				margin: 50px auto;
+				box-shadow: 0px 0px 10px 0px  black;
+			}
+			.box h3{
+				text-align: center;
+				background: deepskyblue;
+				color: white;
+				padding: 20px 0px;
+				text-shadow: 0px 0px 3px black;
+			}
+			.box table{
+				/* border: 1px solid red; */
+				width: 100%;
+				padding: 50px 0px;
+			}
+			.box table tr{}
+			.box table tr td{
+				height: 50px;
+				/* border: 1px solid green; */
+				position: relative;
+			}
+			.box table tr td input{
+				/* width: 150px; */
+				height: 30px;
+				border: 1px solid lightskyblue;
+				padding: 0px 5px;
+				vertical-align: middle;
+				color: #333;
+			}
+			.box table tr td:hover input{
+				border: 1px solid deepskyblue;
+			}
+			.box table tr td input:focus{
+				border: 1px solid deepskyblue;
+				color: darkgray;
+			}
+			
+			.box table tr td span{
+				color: darkgray;
+				font-size: 12px;
+			}
+			.box table tr td label{
+				vertical-align: middle;
+				padding: 0px 20px 0px 5px;
+			}
+			.box table tr td .button_01{
+				padding: 10px 30px;
+				height: auto;
+				cursor: pointer;  /* 鼠标放在上面,形状改为手型 */
+				margin-right: 20px;
+			}
+			.box table tr td p{
+				position: absolute;
+				font-size: 10px;
+				background: orangered;
+				color: white;
+				padding: 5px 10px;
+				bottom: -30px;
+				z-index: 999;
+				opacity: 0;
+				transition: opacity  0.5s,bottom 0.3s;
+				
+			}
+			.box table tr td:hover p{
+				
+				position: absolute;
+				font-size: 10px;
+				background: orangered;
+				color: white;
+				z-index: 999;
+				padding: 5px 10px;
+				bottom: -15px;
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 
+		 1、伪类选择器 :focus{ } 当元素获取到焦点时的样式
+		 2、在input 标签是增加一个属性 placeholder="请输入用户名"  ，
+		 当input标签未输入内容时的提示信息。输入内容后自动消失。
+		 
+		 3、表格的单元格合并  td标签内增加属性  
+		     rowspan=""   行合并（垂直向下合并）
+		     colspan=""   列合并（水平向左合并）
+		 -->
+		<div class="box">
+			<h3>用户注册</h3>
+			<table >
+				<tr>
+					<td class="w_80">用户名:</td>
+					<td class="w_160">
+						<input type="text" name="username" placeholder="请输入用户名" />
+						<p>请输入合法的用户名</p>
+					</td>
+					<td class="text_red">*</td>
+				</tr>
+				<tr>
+					<td class="w_80">密码:</td>
+					<td class="w_160">
+						<input type="password" name="password" placeholder="请输入密码"/>
+						<p>请输入正确的密码</p>
+					</td>
+					<td class="text_red">* <span>输入密码</span></td>
+				</tr>
+				<tr>
+					<td class="w_80">性别:</td>
+					<td class="w_160">
+						<input type="radio" name="sex" /><label>男</label>
+						<input type="radio" name="sex" /><label>女</label>
+					</td>
+					<td class="text_red">*</td>
+				</tr>
+				<tr>
+					<td class="w_80">邮箱:</td>
+					<td class="w_160">
+						<input type="email" name="eamil" placeholder="请输入邮箱" />
+						<p>请输入合法的邮箱</p>
+					</td>
+					<td class="text_red">*</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td   colspan="2">
+						<input class="button_01" type="button" name="button_01" value="提交" />
+						<input class="button_01" type="reset" name="" id="" value="重置" />
+					</td>
+					
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

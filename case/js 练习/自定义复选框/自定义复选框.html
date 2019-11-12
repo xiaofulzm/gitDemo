@@ -1,0 +1,80 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#check{width:600px;margin:50px auto 0px ;}
+				#check h3{line-height:35px; font-size:14px; border-bottom:1px dashed #666; margin-bottom:10px;}
+				 #check ul li{
+				 float:left;text-indent:30px;
+					line-height:35px;
+					font-size:12px;
+					margin:0px 10px;
+					background:url("img/ckbg1.jpg") no-repeat 0px 6px;
+					cursor:pointer;
+				}
+				#check ul li.ck{
+					background:url("img/ckbg2.jpg") no-repeat 0px 6px;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id="check">
+			<h3>你最喜欢的水果</h3>
+				<ul>
+					<li>苹果</li>
+					<li>梨子</li>
+					<li>香蕉</li>
+					<li>葡萄</li>
+					<li>西瓜</li>
+					<li>芒果</li>
+				</ul>
+		 </div>
+		 <script>
+			var aLi = document.querySelectorAll( "#check li");
+			for (var i = 0 ; i<aLi.length  ;i++ ){
+				aLi[i].onclick = function (){
+					//this.classList.add("ck");
+					/*if (this.classList.contains("ck") ){ //判断标签是否有（ck）这个类名
+						this.classList.remove("ck");
+					}else{
+						this.classList.add("ck");
+					}*/
+				this.classList.toggle("ck")
+				}
+
+			}
+		 </script>
+	 </body>
+</html> <!-- 结束标签-->

@@ -1,0 +1,288 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol{
+					margin: 0;
+					padding: 0;
+				}
+				ul{
+					list-style: none;
+				}
+				a{	
+					color: #fff;
+					text-decoration: none;
+				}
+				.box{
+					/* position: relative; */
+					margin: 100px auto;
+					/* min-width: 1200px; */
+					height: 300px;
+					background-color: #441b79;
+				} /* 背景紫色的 */
+				.box .content{
+					margin: 0 auto;
+					width: 1200px;
+					/* border: 1px solid #000; */
+				}/* 内容盒子 */
+				/* 列表部分 */
+				.box .content .list{
+					box-sizing: border-box;
+					position:relative;
+					/* left: 118px; */
+					bottom: 50px;
+					width: 220px;
+					/* height: 475px; */
+					background-color: #0477c0;
+				}
+				.box .list .title{
+					width: 220px;
+					height: 50px;
+					background-color: #188eee;
+				}
+				.box .list .title>.menu{
+					display: inline-block;
+					width: 18px;
+					height: 2px;
+					margin: 0 20px 0 15px;
+					padding: 5px 0;
+					border-color: #fff;
+					border-style: solid;
+					border-width: 2px 0 2px;
+					background-clip: content-box;
+					background-color: #fff;
+					vertical-align: -2px;
+				}
+				.box .list .title>h3{
+					display: inline-block;
+					margin-left: 20px;
+					font-weight: normal;
+					font-size: 15px;
+					color: #fff;
+				}/* 表头部分结束 */
+				.box .list li{
+					box-sizing: border-box;
+					padding: 15px 0 0 15px;
+					height: 70px;
+					border-bottom: 1px solid #188eee;
+				}
+				/* IT.互联网 */
+				.box .list .it-internet>h4{
+					font-weight: normal;
+					font-size: 16x;
+					color: #fff;
+				}
+				.box .list .it-internet>h4>span{
+					margin-left: 115px;
+				}
+				.box .list .it-internet>a>p{
+					font-size: 13px;
+					color: #97cde9;
+					margin-top: 8px;
+				}
+				.box .list .it-internet>.content{
+					position: absolute;
+					left: 220px;
+					bottom: 0px;
+					display: none;
+					width: 975px;
+					height: 422px;
+					color: #fff;
+					border: 2px solid blue ;
+					background-color: red;
+				}
+				.box .list .it-internet:hover > .content{
+					display: block;
+				}
+				/* 设计 创作 */
+				.box .list .design>h4{
+					font-weight: normal;
+					font-size: 16x;
+					color: #fff;
+				}
+				.box .list .design>h4>span{
+					margin-left: 115px;
+				}
+				.box .list .design>a>p{
+					font-size: 13px;
+					color: #97cde9;
+					margin-top: 8px;
+				}
+				.box .list .design>.content{
+					position: absolute;
+					left: 220px;
+					bottom: 0px;
+					display: none;
+					width: 975px;
+					height: 422px;
+					color: #fff;
+					border: 2px solid blue ;
+					background-color: #669900;
+					
+				}
+				.box .list .design:hover > .content{
+					display: block;
+				}
+				 /* 语言留学 */
+				.box .list .language>h4{
+					font-weight: normal;
+					font-size: 16x;
+					color: #fff;
+				}
+				.box .list .language>h4>span{
+					margin-left: 115px;
+				}
+				.box .list .language>a>p{
+					font-size: 13px;
+					color: #97cde9;
+					margin-top: 8px;
+				}
+				.box .list .language>.content{
+					position: absolute;
+					left: 220px;
+					bottom: 0px;
+					display: none;
+					width: 975px;
+					height: 422px;
+					color: #fff;
+					border: 2px solid blue ;
+					background-color: #ffff00;
+				}
+				.box .list .language:hover > .content{
+					display: block;
+				}
+				/* 职业考试 */
+				.box .list .professionnal>h4{
+					font-weight: normal;
+					font-size: 16x;
+					color: #fff;
+				}
+				.box .list .professionnal>h4>span{
+					margin-left: 115px;
+				}
+				.box .list .professionnal>a>p{
+					font-size: 13px;
+					color: #97cde9;
+					margin-top: 8px;
+				}
+				.box .list .professionnal>.content{
+					position: absolute;
+					left: 220px;
+					bottom: 0px;
+					display: none;
+					width: 975px;
+					height: 422px;
+					color: #fff;
+					border: 2px solid blue ;
+					background-color: #ff0066;
+				}
+				.box .list .professionnal:hover > .content{
+					display: block;
+				}
+				/* 升学考研 */
+				.box .list .learning>h4{
+					font-weight: normal;
+					font-size: 16x;
+					color: #fff;
+				}
+				.box .list .learning>h4>span{
+					margin-left: 115px;
+				}
+				.box .list .learning>a>p{
+					font-size: 13px;
+					color: #97cde9;
+					margin-top: 8px;
+				}
+				.box .list .learning>.content{
+					position: absolute;
+					left: 220px;
+					bottom: 0px;
+					display: none;
+					width: 975px;
+					height: 422px;
+					color: #fff;
+					border: 2px solid blue ;
+					background-color: #990099;
+				}
+				.box .list .learning:hover > .content{
+					display: block;
+				}
+				/* 兴趣生活 */
+				.box .list .life>h4{
+					font-weight: normal;
+					font-size: 16x;
+					color: #fff;
+				}
+				.box .list .life>h4>span{
+					margin-left: 115px;
+				}
+				.box .list .life>a>p{
+					font-size: 13px;
+					color: #97cde9;
+					margin-top: 8px;
+				}
+				.box .list .life>.content{
+					position: absolute;
+					left: 220px;
+					bottom: 0px;
+					display: none;
+					width: 975px;
+					height: 422px;
+					color: #fff;
+					border: 2px solid blue ;
+					background-color: #6666ff;
+				}
+				.box .list .life:hover > .content{
+					display: block;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div class="box"><!-- 背景 -->
+			<div  class="content"><!-- 内容盒子 -->
+				<ul class="list">
+					<li class="title">
+						<span class="memu"></span>
+						<h3>全部课程</h3>
+					</li>
+					<li class="it-internet">
+						<h4>IT.互联网<span>&gt;</span></h4>
+						<a href="#"><p>前端开发&nbsp;&nbsp;linux运维</p></a>
+						<div class="content">IT.互联网</div>
+					</li>
+					<li class="design">
+						<h4>设计.创作<span>&gt;</span></h4>
+						<a href="#"><p>平面设计&nbsp;&nbsp;游戏美术设计&nbsp;&nbsp;CAD</p></a>
+						<div class="content">设计.创作</div>
+					</li>
+					<li class="language">
+						<h4>语言.留学<span>&gt;</span></h4>
+						<a href="#"><p>实用口语雅思托福</p></a>
+						<div class="content">设计.创作</div>
+					</li>
+					<li class="professionnal">
+						<h4>职业.考试<span>&gt;</span></h4>
+						<a href="#"><p>公务员教师考试建筑工程</p></a>
+						<div class="content">职业.考试</div>
+					</li>
+					<li class="learning">
+						<h4>升学.考研<span>&gt;</span></h4>
+						<a href="#"><p>考研大学高中初中</p></a>
+						<div class="content">升学.考研</div>
+					</li>
+					<li class="life">
+						<h4>兴趣.生活<span>&gt;</span></h4>
+						<a href="#"><p>摄影乐器美妆婴儿</p></a>
+						<div class="content">兴趣.生活</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	 </body>
+</html> <!-- 结束标签-->

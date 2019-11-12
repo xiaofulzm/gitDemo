@@ -1,0 +1,168 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>登录表单</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol{
+					margin: 0;
+					padding: 0;
+				}
+				a{
+					text-decoration: none;
+				}
+				ul{
+					list-style-type: none;
+				}
+				#form{
+					box-sizing: border-box;
+					margin: 50px auto;
+					width: 428px;
+					height: 415px;
+					border: 1px solid #ccc;
+					border-radius: 3%;
+				}
+				#form .list{
+					padding: 20px 0px 0px 0px;
+				}
+				#form .list li{
+					position: relative;
+					width: 370px;
+					height: 40px;
+					/* border: 1px solid red; */
+					margin: 20px auto;
+					line-height: 40px;
+					text-align: right;
+				}
+				#form .list li input{
+					position: relative;
+					width: 290px;
+					height: 40px;
+					outline: none;
+					border: 1px solid #ccc;
+					border-radius: 6px;
+					text-indent: 2em;
+				}
+					/* 边框提示开始 */
+				#form .list li .hint{
+					/* position: relative; */
+					position: absolute;
+					top: -10px;
+					left: 371px;
+					box-sizing: border-box;
+					display: none;
+					/* width: 310px; */
+					height: 60px;
+					/* border: 1px blue solid ; */
+				}  /* 小的三角形 */
+				#form .list .hint .triangle{
+					position: absolute;
+					top: 0px;
+					left:  0px;
+					display: inline-block;
+					width: 0;
+					height: 0;
+					margin: 20px 0px 20px -10px;
+					border: 10px solid #56a9d3;
+					border-left-color: transparent;
+					border-top-color: transparent;
+					border-bottom-color: transparent;
+				}
+				#form .list .hint .content{
+					position: absolute;
+					top: -1px;
+					left: 9px;
+					display: inline-block;
+					width: 300px;
+					height: 60px;
+					border-radius: 10px;
+					background-color: #56a9d3;
+					padding-left: 10px;
+					color: #fff;
+					line-height: 60px;
+					text-align: left;
+				}
+				/* 边框提示结束 */
+						/* 注册和登录 */
+				#form .list .submit{
+					text-align: left;
+					text-indent: 0;
+				}
+				#form .list .submit .loign1{
+					margin-left: 40px;
+					text-align: left;
+					text-indent: 1.5em;
+					width: 80px;
+					height: 30px;
+					background-color: #3c6cb1;
+					color: #fff;
+				} 
+				#form .list .submit .loign2{
+					text-align: center;
+					text-indent:0em;
+					width: 140px;
+					height: 30px;
+					margin-left: 20px;
+					background-color: #3c6cb1;
+					color: #fff;
+				}
+				/* 鼠标移动到input中显示提示 */
+				#form .list li input:focus~div{
+					display: block;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<form action=""  method="get" target=="_self" id="form">
+			<ul class="list">
+				<li class="user"' >
+					用户名: <input type="text" name="user" value="" placeholder="请输入用户名" >
+					<div class="hint">
+						<div class="triangle"></div>
+						<p class="content">用户名必须为4--16位数字或者英文字母</p>
+					</div>
+				</li>
+				<li class="code">
+					密码: <input  type="password" name="code" value="" placeholder="密码" >
+					<div class="hint">
+						<div class="triangle"></div>
+						<p class="content">可使用英文字母,数字,特殊字符</p>
+					</div>
+				</li>
+				<li class="affirm-code">
+					确认密码: <input  type="password" name="affirm-code" value="" placeholder="再次输入密码" >
+					<div class="hint">
+						<div class="triangle"></div>
+						<p class="content">请确认上面输入的密码</p>
+					</div>
+				</li>
+				<li class="email">
+					email: <input  type="email" name="email" value="" placeholder="123456789@qq.com" >
+					<div class="hint">
+						<div class="triangle"></div>
+						<p class="content">请按照提示格式输入邮箱地址</p>
+					</div>
+				</li>
+				<li class="nickname">
+					昵称: <input  type="text" name="nickname" value="" placeholder="输入英文字母或者数字" >
+					<div class="hint">
+						<div class="triangle"></div>
+						<p class="content">请按照提示格式输入邮箱地址</p>
+					</div>
+				</li>
+				<li class="submit">
+					<a href="" target="_blank">
+						<input  class="loign1" type="submit" name="loign" value="注册" >
+					</a>
+					<a href="" target="_blank">
+						<input  class="loign2" type="submit" name="loign" value="我有账号，我要登录" >
+					</a>
+				</li>
+			</ul>
+		</form>
+	 </body>
+</html> <!-- 结束标签-->

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../src/vue.js"></script>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+		<link rel="stylesheet" href="src/css/layui.css" />
+	</head>
+	<body>
+		<div id="app">
+			<home></home>
+			<ul>
+				<router-link to="/foo" tag="li">go to foo</router-link>
+				<router-link to="/bar" tag="li">go to bar</router-link>
+			</ul>
+			<router-view></router-view>
+		</div>
+		
+		
+		
+		<script>
+			let home = {template:"<h1>欢迎来打破vue的世界</h1>"};
+			let foo ={template:`
+				<div>
+					<h1>foo
+						<router-link to="/foo/foo1" tag="li">go to foo1</router-link>
+						<router-link to="/foo/foo2" tag="li">go to foo2</router-link>
+					</h1>
+					<router-view></router-view>
+				</div>
+				`
+			};
+			
+			let foo1 ={
+				template:
+				`<h2>foo1
+					
+				</h2>`,
+			}
+			let foo2 ={
+				template:
+				`<h2>foo2
+					
+				</h2>`,
+			}
+			
+			
+			
+			let bar = {
+				template:
+				`<h2>bar
+					<button v-on:click="goback"> go bar</button>
+				</h2>`,
+				methods:{
+					goback(){
+						this.$router.go(-1)
+					}
+				}
+			};
+			
+//			let nomal={
+//				template:`
+//					<span> 默认内容</span>
+//				`
+//			}
+//			
+//			let other={
+//				template:`
+//					<span> 其他内容</span>
+//				`
+//			}
+//			
+//			let error={
+//				template:`
+//					<span> 宁访问的路由不存在</span>
+//				`
+//			}
+			
+			let routes =[
+				{path:"",redirect:"/foo/foo1"},
+				{
+					path:"/foo",
+					component:foo,
+					children:[
+						{
+							path:"foo1",
+							component:foo1
+						},
+						{
+							path:"foo2",
+							component:foo2
+						}
+					]
+				},
+				{path:"/bar",component:bar},
+//				{path:"/error",component:error},
+//				{path:"*",redirect:"/error"}
+			]
+			
+			
+			let router= new VueRouter({
+				routes,
+				
+			})
+			
+			let ele= new Vue({
+				el:"#app",
+				router,
+				components:{
+					home
+				}
+				
+			})
+		</script>
+	</body>
+</html>

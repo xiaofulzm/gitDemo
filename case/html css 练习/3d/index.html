@@ -1,0 +1,136 @@
+<!doctype html> <!-- 声明身份 文档类型 -->
+<html>
+	<head><!--包含数据信息-->
+		<meta charset="utf-8"><!--信息标签 声明字符编码集 utf-8万国码-->
+		<meta name="Author" content="银时老师">
+		<meta name="keywords" content="电商,前端">
+		<meta name="Description" content="网站的描述,广告位">
+		<title>银时老师</title>
+		<style>
+			p,h1,h2,h3,h4,h5,h6,ul,li,body{
+				margin: 0;
+				font-size: 16px;
+				line-height: normal;
+			}
+			input{
+				padding: 0;
+				outline: none;/* border:*/
+			}
+			
+			ul,ol{
+				padding: 0;
+				list-style-type: none;
+			}
+			a{
+				color: #000;
+				text-decoration: none;
+			}
+			.clearfix:after{
+				display: block;
+				content: ".";
+				height: 0;
+				font-size: 0;
+				clear: both;
+				overflow: hidden;
+			}
+
+
+			.box{
+				margin: 200px auto;
+				width: 100px;
+				height: 100px;
+				background-color: #ccc;
+				/* transform: rotateY(60deg); */
+				/* transform: translate(300px) rotate(45deg); */
+				transform-origin: 0 0;
+				animation: roll 2s linear infinite;
+			}
+			@keyframes roll{
+				from{
+					transform: rotateY(0deg);
+				}
+				to{
+					transform: rotateY(360deg);
+				}
+			}
+			/* .box:hover{
+				background-color: #f00;
+			} */
+
+			.big-box{
+				perspective: 600px;视距
+			}
+		</style>
+	</head>
+	<body>
+	<div class="big-box">
+		<div class="box">asdasd</div>
+	</div>
+		
+		<!--
+			
+			box-shadow
+			text-shadow
+		
+			变换: 结果
+
+			transform: 
+				旋转: rotate(0deg)
+				平移: 
+					translate(x, y)
+					translateX 
+				拉升压缩 变形
+
+				文字的最小大小. 12px
+
+			scale: 默认值 1
+				传入一个值: x y 同样的那个值
+				两个: x y 
+
+				传入的数值是负数的时候, 变成镜像表现
+
+			变换的基点: 
+				transform-origin: x y
+					...
+
+			变化的组合: 
+				多条变换的时候, 和 背景的生效方式是一样的
+				background: 
+					a, 最后生效的
+					b,
+					c;
+				
+				skew
+				skew(0deg,0deg)
+				skewX
+				skewY
+					水平不变(文字朝向)竖直变发生倾斜
+					竖直不变(换行朝向)水平发生倾斜
+
+				2d变换的核心知识点.
+
+				3d变换. 计算出一个3D空间, 透视的表现效果.
+
+					立体变换: 旋转.平移
+
+					近大远小. 透视, 
+
+					将一个盒子绕着某一个轴旋转
+
+					rotate 绕着哪条轴旋转的??
+						Z轴旋转的.
+
+					看到一个3D物体的条件?
+						1. 旋转x y 
+
+						2. 有一个视角(vr)
+								人的眼睛距离屏幕的距离: 视角: 1000px左右
+
+					
+
+					
+
+
+		-->
+	</body>
+</html>

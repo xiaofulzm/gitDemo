@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>:target 伪类选择器1</title>
+		<style type="text/css">
+			/* 
+			:target   CSS3新属性  伪类选择器
+			URL 带有后面跟有锚名称 #，指向文档内某个具体的元素。
+			这个被链接的元素就是目标元素(target element)。
+			:target 选择器可用于选取当前活动的目标元素。 
+			 
+			 */
+			
+			:target{
+				background: yellow;
+				padding:50px 0px ;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="tabmenu">
+			<p><a href="#tab_1">计算机网络技术P</a></p>
+			<p><a href="#tab_2">计算机软件技术P</a></p>
+			<p><a href="#tab_3">数字媒体技术P</a></p>
+		</div>
+		
+		<div class="tab_content">
+			<h1 id="tab_1">计算机网络技术H1</h1>
+			<h1 id="tab_2">计算机软件技术H1</h1>
+			<h1 id="tab_3">数字媒体技术H1</h1>
+		</div>
+	</body>
+</html>

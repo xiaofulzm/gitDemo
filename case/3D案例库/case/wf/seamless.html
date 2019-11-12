@@ -1,0 +1,87 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>无缝轮播</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+ 				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+			</style>
+			<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+			<link rel="stylesheet" href="css/seamless.css" />
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+	 	<div id="banner">
+	 		<!--轮播图-->
+	 		<div class="pic">
+	 			<ul>
+	 				<li><a href="javascript:;">
+	 					<img src="./img/seamless.5.jpg"/>
+	 				</a></li>
+	 				<li><a href="javascript:;">
+	 					<img src="./img/seamless.1.jpg"/>
+	 				</a></li>
+	 				<li><a href="javascript:;">
+	 					<img src="./img/seamless.2.jpg"/>
+	 				</a></li>
+	 				<li><a href="javascript:;">
+	 					<img src="./img/seamless.3.jpg"/>
+	 				</a></li>
+	 				<li><a href="javascript:;">
+	 					<img src="./img/seamless.4.jpg"/>
+	 				</a></li>
+	 				<li><a href="javascript:;">
+	 					<img src="./img/seamless.5.jpg"/>
+	 				</a></li>
+	 				<li><a href="javascript:;">
+	 					<img src="./img/seamless.1.jpg"/>
+	 				</a></li>
+	 			</ul>
+	 		</div>
+	 		<!--底部小圆圈部分-->
+		 	<div class="tab">
+		 		<ul>
+	 				<li class="on"></li>
+	 				<li></li>
+	 				<li></li>
+	 				<li></li>
+	 				<li></li>
+		 		</ul>
+		 	</div>
+		 	<!--左右按钮-->
+		 	<div class="btn">
+		 		<div class="left">&lt</div>
+		 		<div class="right">&gt</div>
+		 	</div>
+	 	</div>
+		<script src="js/new_file.js"></script>
+	 </body>
+</html> <!-- 结束标签-->

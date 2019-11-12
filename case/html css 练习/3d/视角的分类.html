@@ -1,0 +1,103 @@
+<!doctype html> <!-- 声明身份 文档类型 -->
+<html>
+	<head><!--包含数据信息-->
+		<meta charset="utf-8"><!--信息标签 声明字符编码集 utf-8万国码-->
+		<meta name="Author" content="银时老师">
+		<meta name="keywords" content="电商,前端">
+		<meta name="Description" content="网站的描述,广告位">
+		<title>银时老师</title>
+		<style>
+			p,h1,h2,h3,h4,h5,h6,ul,li,body{
+				margin: 0;
+				font-size: 16px;
+				line-height: normal;
+			}
+			input{
+				padding: 0;
+				outline: none;/* border:*/
+			}
+			
+			ul,ol{
+				padding: 0;
+				list-style-type: none;
+			}
+			a{
+				color: #000;
+				text-decoration: none;
+			}
+			.clearfix:after{
+				display: block;
+				content: ".";
+				height: 0;
+				font-size: 0;
+				clear: both;
+				overflow: hidden;
+			}
+			body{
+				
+			}
+			
+			.list li div{
+				float: left;
+				width: 100px;
+				height: 200px;
+				border: 1px #000 solid;
+				background-color: #ccc;
+				transform: rotateY(60deg);
+			}
+
+			.list li{
+				float: left;
+				width: 100px;
+				height: 200px;
+				perspective: 500px;
+			}
+			.list li+li{
+				margin-left: 40px;
+			}
+			/* .list li:nth-child(1){
+				transform: rotateY(15deg);
+			}
+			.list li:nth-child(2){
+				transform: rotateY(30deg);
+			}
+			.list li:nth-child(3){
+				transform: rotateY(45deg);
+			}
+			.list li:nth-child(4){
+				transform: rotateY(60deg);
+			}
+			.list li:nth-child(5){
+				transform: rotateY(75deg);
+			}
+			.list li:nth-child(6){
+				transform: rotateY(90deg);
+			} */
+			
+
+
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+		</ul>
+	</body>
+</html>

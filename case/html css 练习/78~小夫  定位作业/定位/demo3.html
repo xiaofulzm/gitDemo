@@ -1,0 +1,136 @@
+<!doctype html> <!-- 声明身份 文档类型 -->
+<html>
+	<head><!--包含数据信息-->
+		<meta charset="utf-8"><!--信息标签 声明字符编码集 utf-8万国码-->
+		<meta name="Author" content="银时老师">
+		<meta name="keywords" content="电商,前端">
+		<meta name="Description" content="网站的描述,广告位">
+		<title>银时老师</title>
+		<style>
+			p,h1,h2,h3,h4,h5,h6,ul,li,body{
+				margin: 0;
+				font-size: 16px;
+				line-height: normal;
+			}
+			ul,ol{
+				padding: 0;
+				list-style-type: none;
+			}
+			a{
+				color: #000;
+				text-decoration: none;
+			}
+			/* 样式初始化*/
+			.clearfix:after{
+				display: block;
+				content: ".";
+				font-size: 0;
+				overflow: hidden;
+				height: 0;
+				clear: both;
+			}
+
+			.lunbo{
+				height: 500px;
+			}
+			.lunbo>.title{
+				position: relative;
+				top: 50px;
+				color: transparent;
+				font-size: 0;
+				border-bottom: 1px #ccc solid;
+			}
+			.lunbo>.title>.pic{
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -42px;
+				margin: auto;
+				width: 377px;
+				height: 87px;
+				background: url("./demo3/1.jpg") 0px -521px;
+			}
+			.lunbo .main{
+				position: relative;
+				top: 110px;
+				margin: 0 auto;
+				width: 1000px;
+				height: 500px;
+			}
+			.lunbo .main .piclist{
+				overflow: hidden;
+				height: 577px;
+			}
+			.lunbo .main .list{
+				position: relative;
+				left: 0;
+				width: 2000px;
+				transition: 1s;
+			}
+			.lunbo .main .list:hover{
+				left: -1000px;
+			}
+			.lunbo .main .list li{
+				position: relative;
+				float: left;
+			}
+
+			.lunbo .main .btns>div{
+				position: absolute;
+				top: 307px;
+				width: 40px;
+				height: 50px;
+				background-image: url("./demo3/3.png");
+			}
+			.lunbo .main .btns>.btn-left{
+				left: 0;
+				background-position: -6px -91px;
+			}
+			.lunbo .main .btns>.btn-right{
+				right: 0;
+				background-position: -6px -164px;
+			}
+			.lunbo .main .info{
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -77px;
+				margin: 0 auto;
+				width: 890px;
+				height: 154px;
+				background-color: rgba(22,22,22,.7);
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body> <!--可视化区域-->
+		<div class="lunbo">
+			<h3 class="title">
+				<div class="pic">美人经</div>
+			</h3>
+			<div class="main"><!-- 轮播功能和表现的整体控制-->
+				<div class="piclist">
+					<ul class="list clearfix"><!--第一二张-->
+						<li>
+							<img src="./demo3/pic1.jpg" alt="">
+							<div class="info">
+								text1
+							</div>
+						</li>
+						<li>
+							<img src="./demo3/pic2.jpg" alt="">
+							<div class="info">
+								text2
+							</div>
+						</li>
+					</ul>
+					<div class="btns">
+						<div class="btn-left"><a href=""></a></div>
+						<div class="btn-right"><a href=""></a></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

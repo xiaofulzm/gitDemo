@@ -1,0 +1,63 @@
+@charset "utf-8";
+#good-nav .good-nav-top{
+    margin:15px auto 0;
+}
+#good-nav .good-nav-top-c{
+    display:flex;
+    justify-content:space-between;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+}
+#good-nav .good-nav-top-c>li>img{
+    display: block;
+    width:315px;
+    height:170px;
+    background-color:red;
+}
+#good-nav .good-nav-top-c>.nav-top-one{
+    width:234px;
+    height:170px;
+    background-color:#5f5750;
+}
+#good-nav .good-nav-top-c .nav-top-one .top-one{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+#good-nav .good-nav-top-c .nav-top-one .top-one>li{
+    position: relative;
+}
+#good-nav  .nav-top-one .top-one>li>a{
+    display: block;
+    width:78px;
+    height:45px;
+    padding:20px 0;
+    color:#cdcac8;
+    font-size:12px;
+    text-align:center;
+}
+#good-nav  .nav-top-one .top-one>li>a:hover{
+    color:#fff;
+}
+#good-nav  .nav-top-one .top-one>li>a>i{
+    font-size:25px;
+}
+#good-nav  .nav-top-one .top-one>li:before{
+    content:"";
+    position: absolute;
+    top:12px;
+    width:1px;
+    height:66px;
+    background-color:rgb(129, 125, 125);
+}
+#good-nav  .nav-top-one .top-one>li:after{
+    content:"";
+    position: absolute;
+    left:7px;
+    bottom:0px;
+    width:66px;
+    height:1px;
+    background-color:rgb(129, 125, 125);
+}
+/* good-nav-top样式 */
+#good-nav .good-nav-bottom{
+    margin:25px auto 0;
+}

@@ -1,0 +1,127 @@
+<!doctype html> <!-- 声明身份 文档类型 -->
+<html>
+	<head><!--包含数据信息-->
+		<meta charset="utf-8"><!--信息标签 声明字符编码集 utf-8万国码-->
+		<meta name="Author" content="银时老师">
+		<meta name="keywords" content="电商,前端">
+		<meta name="Description" content="网站的描述,广告位">
+		<title>银时老师</title>
+		<style>
+			p,h1,h2,h3,h4,h5,h6,ul,li,body{
+				margin: 0;
+				font-size: 16px;
+				line-height: normal;
+			}
+			ul,ol{
+				padding: 0;
+				list-style-type: none;
+			}
+			a{
+				color: #000;
+				text-decoration: none;
+			}
+			/* 样式初始化*/
+			.main{
+				position: relative;
+				top: 100px;
+				height: 300px;
+				background-color: #441b79;
+			}
+			.main .center{
+				position: relative;
+				margin: 0 auto;
+				width: 85%;
+				min-width: 1200px;
+				height: 300px;
+				background-color: pink;
+			}
+			.main .nav{
+				position: absolute;
+				top: -50px;
+				width: 220px;
+				height: 475px;
+				background-color: rgba(22, 42, 222, 0.6);
+			}
+			.main .center .nav .title{
+				line-height: 50px;
+			}
+			.main .nav .title .menu{
+				display: inline-block;
+				width: 18px;
+				height: 2px;
+				margin: 0 20px 0 15px;
+				padding: 5px 0;
+				border-color: #fff;
+				border-style: solid;
+				border-width: 2px 0 2px;
+				background-clip: content-box;
+				background-color: #fff;
+				vertical-align: -2px;
+			}
+			.main .nav .list{
+				position: relative;
+			}
+			.main .nav .list>li{
+				height: 70px;
+				border-bottom: 1px rgba(222,222,222) solid;
+				color: #fff;
+			}
+			.main .nav .list .kind{
+				height: 70px;
+			}
+			.main .nav .list .more{
+				position: absolute;
+				display: none;
+				left: 220px;
+				top: 0px;
+				width: 980px;
+				height: 425px;
+			}
+			.red{
+				background-color: red;
+			}
+			.blue{
+				background-color: blue;
+			}
+
+			.main .nav li:hover .more{
+				display: block;
+			}
+		</style>
+	</head>
+	<body> <!--可视化区域-->
+		<div class="main"><!-- 这个功能区域-->
+			<div class="center"><!-- 居中的功能区域-->
+				<div class="nav"><!-- 蓝色选项卡区域-->
+					<h3 class="title"><span class="menu"></span>全部课程</h3>
+					<ul class="list">
+						<li>
+							<div class="kind">
+								<p>
+									<span></span>
+								</p>
+								<p></p>
+							</div><!-- 左边的小块-->
+							<div class="more red">潭州教育</div>
+						</li>
+						<li>
+							<div class="kind">直播课教室</div><!-- 左边的小块-->
+							<div class="more blue">银主播</div>
+						</li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--
+			定位属性:
+				relative
+				absolute
+				fixed
+				static // 默认定位方式, 等于不定位
+		-->
+	</body>
+</html>

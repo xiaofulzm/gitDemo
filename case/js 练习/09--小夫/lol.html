@@ -1,0 +1,113 @@
+<!doctype html><!-- 着重强调这是一个HTML模板 -->
+<html lang="en"><!-- 页面的所有内容，涵盖整体（人） -->
+	 <head><!-- 灵魂，储存的是页面的基础信息（标题，编码格式 ） -->
+		  <meta charset="UTF-8"><!-- 支持中文的外国码 -->
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="小夫"><!-- 作者 -->
+		  <meta name="Keywords" content=""><!-- 关键词： 到底有哪些东西进行总结，进行分类 -->
+		  <meta name="Description" content=""><!-- 页面的描述 -->
+		  <title>小夫的模板</title><!-- 页面标题 -->
+			<style>
+				body,h1,h2,h3,h4,h5,h6,p,ul,dl,ol,p{
+					margin: 0;
+					font-size: 16px;
+					line-height: normal;
+				}
+				a{
+					color: #000;
+					text-decoration: none;
+				}
+				ul,dl{
+					padding: 0;
+					list-style-type: none;
+				}
+				input{
+					margin: 0;
+					padding: 0;
+					outline: none;  /* border */
+				}
+				.clearfix:after{
+					display: block;
+					content: "";
+					height: 0;
+					font-size: 0;
+					clear: both;
+					overflow: hidden;
+				}
+				#box{
+					margin: 50px auto;
+					width: 820px;
+					height: 380px;
+					overflow: hidden;
+					cursor: pointer;
+				}
+				#box #list{
+					position: relative;
+					top: 0px;
+					left: px;
+					width: 4100px;
+					height: 340px;
+					transition: .2s;
+				}
+				#box #list li{
+					float: left;
+					width: 820px;
+					height: 340px;
+				}
+				/* 图片部分结束 */
+				#hd{
+					width: 100%;
+					height: 40px;
+					background-color: #ccc;
+				}
+				#hd p{
+					display: inline-block;
+					width: 160px;
+					height: 38px;
+					color: #000;
+					line-height: 40px;
+					text-align: center;
+				}
+				#hd p.active{
+					color: blue;
+					background-color: #fff;
+					border-bottom: 3px solid  blue;
+				}
+			</style>
+	</head>
+	 <body><!-- 肉体,储存了页面的具体内容表现 -->
+		<div id="box">
+			<div id="list" style=left: 0px;>
+				<ul>
+					<li><img src="./images/1.jpg"></li>
+					<li><img src="./images/2.jpg"></li>
+					<li><img src="./images/3.jpg"></li>
+					<li><img src="./images/4.jpg"></li>
+					<li><img src="./images/5.jpg"></li>
+				</ul>
+			</div>
+			<div id="hd">
+				<p class="active">季中英雄之礼</p>
+				<p>季中英雄之礼</p>
+				<p>季中英雄之礼</p>
+				<p>季中英雄之礼</p>
+				<p>季中英雄之礼</p>
+			</div>
+		</div>
+		<script>
+			var oList = document.getElementById("list"),
+				aP = document.querySelectorAll("#box #hd p");
+				for( var i = 0,len = aP.length; i<len;i++ ){
+					aP[i].lzm = i;// 闭包
+					aP[i].onmouseenter = function (){
+						for (var j = 0;j<len ; j++){
+							aP[j].classList.remove("active");//删除原有的类名
+						}
+						this.classList.add("active");//添加
+						var num = this.lzm;
+						oList.style.left= -num*820+ "px";
+					}
+				}
+		</script>
+	 </body>
+</html> <!-- 结束标签-->

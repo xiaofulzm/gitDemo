@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1> 天气不错</h1>
+			<router-view>
+			</router-view>
+		</div>
+		
+		<script>
+			let aa ={
+				template:` 
+					<div class="a">
+						<router-link to="/news/today">今日新闻</router-link>
+						<router-link to="/news/wet">今日天气</router-link>
+					</div>
+				`
+			}
+			
+			let b ={
+				template:`
+					<div>
+						<aa></aa>
+						<router-view class="sdhj"></router-view>
+						<router-view name="target"></router-view>
+					</div>
+				`,
+				components:{
+					aa 
+				}
+			}
+			
+			
+			let c={
+				template:`
+					<h2>ccccc</h2>
+				`
+			}
+			let e={
+				template:`
+					<h2>eeeee</h2>
+				`
+			}
+			
+			let d={
+				template:`
+					<h2>ddddd</h2>
+				`
+			}
+			
+			
+			let  router = new  VueRouter({
+				mode:"history",
+				routes:[
+					{
+						path:"/news",
+						component:b,
+						children:[
+							{
+								path:"today",
+								component:c
+							},
+							{
+								path:"wet",
+								components:{
+									default:d,
+									target:e
+								}
+							}.
+							
+						]
+					}
+				]
+			})
+			
+			router.push("/news/today");
+			
+			new Vue({
+				el:"#app",
+				router
+			})
+		</script>
+	</body>
+</html>
